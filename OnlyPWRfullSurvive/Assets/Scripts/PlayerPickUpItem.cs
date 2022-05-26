@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerPickUpItem : MonoBehaviour {
 
     [SerializeField] InputActionMap actionMap;
-    [SerializeField] Rigidbody2D rigidBody;
+    // [SerializeField] Rigidbody2D rigidBody;
 
     private GameObject collectable = null;
     
@@ -14,20 +14,20 @@ public class PlayerPickUpItem : MonoBehaviour {
         SetupKeys();
     }
     
-    private void OnCollisionEnter2D(Collision2D other) {
-        Debug.Log("HIT!");
-        if(other.gameObject.tag == "Collectable") {
-            collectable = other.gameObject;
-        }
-    }
+    // private void OnCollisionEnter2D(Collision2D other) {
+    //     Debug.Log("HIT!");
+    //     if(other.gameObject.tag == "Collectable") {
+    //         collectable = other.gameObject;
+    //     }
+    // }
 
-    private void OnCollisionExit2D(Collision2D other) {
-        if(other.gameObject.tag == "Collectable") {
-            collectable = null;
-        }
-    }
+    // private void OnCollisionExit2D(Collision2D other) {
+    //     if(other.gameObject.tag == "Collectable") {
+    //         collectable = null;
+    //     }
+    // }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("HIT!");
         if(other.gameObject.tag == "Collectable") {
             collectable = other.gameObject;

@@ -9,14 +9,14 @@ public class CollectableHandler : MonoBehaviour
     [SerializeField] InputActionMap actionMap;
     // private bool playerInRange = false;
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter2D(Collider2D other) {
         Debug.Log(other.gameObject.tag);
         if(other.gameObject.tag == "Player") {
             other.gameObject.GetComponent<PlayerPickUpItem>().SetCollectable(this.gameObject);
         }
     }
 
-    private void OnTriggerExit(Collider other) {
+    private void OnTriggerExit2D(Collider2D other) {
         Debug.Log(other.gameObject.tag);
         if(other.gameObject.tag == "Player") {
             other.gameObject.GetComponent<PlayerPickUpItem>().SetCollectable(null);

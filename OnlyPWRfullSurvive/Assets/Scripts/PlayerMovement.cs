@@ -21,8 +21,6 @@ public class PlayerMovement : MonoBehaviour
     private float moveDown = 0f;
     private float moveUp = 0f;
 
-    private bool collectableInRange = false;
-
     
     void Start()
     {
@@ -61,12 +59,6 @@ public class PlayerMovement : MonoBehaviour
         // actionMap["Left"].canceled += cts => StopPlayer();
         // actionMap["Right"].started += cts => MovePlayer(1, 0);
         // actionMap["Right"].canceled += cts => StopPlayer();
-    }
-
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "Collectable") {
-
-        }
     }
 
     
