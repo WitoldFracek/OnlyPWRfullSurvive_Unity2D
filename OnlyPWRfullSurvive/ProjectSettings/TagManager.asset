@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collectable
   - Timer
+  - GoToDiffScene
   layers:
   - Default
   - TransparentFX

@@ -1,44 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-
 
 public class CollectableHandler : MonoBehaviour
 {
-    [SerializeField] InputActionMap actionMap;
-    // private bool playerInRange = false;
-
-    private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log(other.gameObject.tag);
-        if(other.gameObject.tag == "Player") {
-            other.gameObject.GetComponent<PlayerPickUpItem>().SetCollectable(this.gameObject);
-        }
+    [SerializeField] public string collectableTag;
+    void Start()
+    {
+        
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
-        Debug.Log(other.gameObject.tag);
-        if(other.gameObject.tag == "Player") {
-            other.gameObject.GetComponent<PlayerPickUpItem>().SetCollectable(null);
-        }
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
-
-    // void SetupKeys() {
-    //     actionMap["Interact"].performed += ctx => CollectItem();
-    // }
-
-    // private void CollectItem() {
-    //     Debug.Log("E pressed");
-    //     if(playerInRange) {
-    //         Destroy(this.gameObject);
-    //     }
-    // }
-
-    // private void OnEnable() {
-    //     actionMap.Enable();
-    // }
-
-    // private void OnDisable() {
-    //     actionMap.Disable();
-    // }
 }

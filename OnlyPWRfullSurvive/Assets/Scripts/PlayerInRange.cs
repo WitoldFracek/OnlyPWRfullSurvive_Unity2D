@@ -12,7 +12,7 @@ public class PlayerInRange : MonoBehaviour
 
     void FixedUpdate()
     {
-        if ((player.transform.position-this.transform.position).sqrMagnitude<distance) {
+        if ((player.transform.position - this.transform.position).sqrMagnitude < distance) {
             whenInRange();
         }
         else {
@@ -21,6 +21,5 @@ public class PlayerInRange : MonoBehaviour
     }
 
     protected virtual void whenInRange() {}
-
     protected virtual void whenOutOfRange() {}
 }

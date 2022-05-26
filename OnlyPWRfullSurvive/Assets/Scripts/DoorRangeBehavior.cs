@@ -5,8 +5,6 @@ using UnityEngine;
 public class DoorRangeBehavior : PlayerInRange
 {
     [SerializeField]
-    private int roomNumber;
-    [SerializeField]
     private float timeToEnter;
     private static float maxHowLateSec = 10f;
 
