@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Collectable
+  - Timer
   layers:
   - Default
   - TransparentFX
@@ -14,6 +16,7 @@ TagManager:
   - 
   - 
   - 
+  - Player
   - 
   - 
   - 
@@ -25,8 +28,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Background
   - 
   - 
   - 
