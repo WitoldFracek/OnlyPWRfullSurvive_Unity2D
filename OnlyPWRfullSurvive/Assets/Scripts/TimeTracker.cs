@@ -5,6 +5,7 @@ using UnityEngine;
 public class TimeTracker : MonoBehaviour
 {
     public static float timeTracker = 0f;
+    public static float maxTime = 720f;
     void FixedUpdate()
     {
         timeTracker += Time.deltaTime;

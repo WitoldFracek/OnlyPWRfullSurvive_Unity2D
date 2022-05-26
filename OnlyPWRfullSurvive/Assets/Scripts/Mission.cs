@@ -7,7 +7,7 @@ public class Mission {
         this.ectss = ectss;
     }
 
-    public void setFinalised() {
+    public void setFinalisedIfAllowed() {
         if(canBeFinalised()) {
             WasFinalised = true;
         }
@@ -34,10 +34,12 @@ public class TimeRestrictedMission : Mission {
 }
 
 public class OnTimeMission : Mission {
+    public string roomNumber {get; private set;}
     private float timeToDoMission;
     private static float maxHowLateSec = 10f;
-    public OnTimeMission(int ectss, float maxTimeToFinish) : base(ectss) {
+    public OnTimeMission(int ectss, string roomNumber, float maxTimeToFinish) : base(ectss) {
         this.timeToDoMission = maxTimeToFinish;
+        this.roomNumber = roomNumber;
     }
 
     override public bool canBeFinalised() {
@@ -52,25 +54,39 @@ public class OnTimeMission : Mission {
 
 public class CollectMission: Mission {
     
-    private string collectableTag;
+    public string CollectableTag { get; private set; }
     private int maxCount;
     private int currentCount;
 
     public CollectMission(int ects, int itemCount, string itemTag): base(ects) {
-        this.collectableTag = itemTag;
+        this.CollectableTag = itemTag;
         this.maxCount = itemCount;
         this.currentCount = 0;
     }
 
     public void AddOneItem() {
         currentCount += 1;
-        if(currentCount >= maxCount) {
-            WasFinalised = true;
-        }
+        // if(currentCount >= maxCount) {
+        //     WasFinalised = true;
+        // }
     }
 
     override public bool isStillRelevant() {
         return currentCount < maxCount;
+    }
+
+}
+
+public class ExecutableMission: Mission {
+
+    public float Duration { get; protected set; }
+
+    public ExecutableMission(int ects, float duration): base(ects) {
+        Duration = duration;
+    }
+
+    override public bool canBeFinalised() {
+        return TimeTracker.timeTracker + Duration < TimeTracker.maxTime;
     }
 
 }

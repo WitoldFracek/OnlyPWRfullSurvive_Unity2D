@@ -333,11 +333,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2169827860741087519, guid: dd59bfa754e5d17489c741d3e3e48f71, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.735966
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2169827860741087519, guid: dd59bfa754e5d17489c741d3e3e48f71, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.94
+      value: -3.4
       objectReference: {fileID: 0}
     - target: {fileID: 2169827860741087519, guid: dd59bfa754e5d17489c741d3e3e48f71, type: 3}
       propertyPath: m_LocalPosition.z
@@ -374,6 +374,10 @@ PrefabInstance:
     - target: {fileID: 2169827860741087712, guid: dd59bfa754e5d17489c741d3e3e48f71, type: 3}
       propertyPath: m_Name
       value: Door (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2169827860741087713, guid: dd59bfa754e5d17489c741d3e3e48f71, type: 3}
+      propertyPath: doorNumber
+      value: A201
       objectReference: {fileID: 0}
     - target: {fileID: 2169827860741087713, guid: dd59bfa754e5d17489c741d3e3e48f71, type: 3}
       propertyPath: timeToEnter
@@ -808,6 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d68984d945d34f489e677c0ee3c80a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectableTag: 
 --- !u!1 &1950307847
 GameObject:
   m_ObjectHideFlags: 0
