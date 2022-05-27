@@ -1,6 +1,6 @@
 public class Mission {
     public bool WasFinalised { get; protected set;}
-    private int ectss;
+    public int ectss {get; private set;}
     public string Description { get; set; }
 
     public Mission(int ectss) {
@@ -19,7 +19,17 @@ public class Mission {
     }
 
     public virtual bool isStillRelevant() {
+        if (WasFinalised) return false;
         return canBeFinalised();
+    }
+
+    public override string ToString()
+    {
+        var prevText = ectss + " ECTS - ";
+        if(WasFinalised) {
+            prevText += "DONE ";
+        }
+        return prevText + Description;
     }
 }
 
@@ -37,7 +47,7 @@ public class TimeRestrictedMission : Mission {
 public class OnTimeMission : Mission {
     public string roomNumber {get; private set;}
     private float timeToDoMission;
-    private static float maxHowLateSec = 10f;
+    private static float maxHowLateSec = 5f;
     public OnTimeMission(int ectss, string roomNumber, float maxTimeToFinish) : base(ectss) {
         this.timeToDoMission = maxTimeToFinish;
         this.roomNumber = roomNumber;
@@ -49,7 +59,13 @@ public class OnTimeMission : Mission {
     }
 
     override public bool isStillRelevant() {
+        if (WasFinalised) return false;
         return TimeTracker.timeTracker <= timeToDoMission + maxHowLateSec;
+    }
+
+    public override string ToString()
+    {
+        return TimeTracker.GetTimePretty(timeToDoMission) + " (+" + maxHowLateSec + ") - " + base.ToString();
     }
 }
 

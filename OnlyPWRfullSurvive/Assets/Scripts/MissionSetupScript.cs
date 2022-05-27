@@ -12,7 +12,7 @@ public class MissionSetupScript : MonoBehaviour
         if(level == 1) {
             MissionHandler.setLevel1Missions();
         }
-        hud.SetMissions(MissionHandler.GetAllUnfinishedMissions());
+        // hud.SetMissions(MissionHandler.GetAllUnfinishedMissions());
     }
 
 }

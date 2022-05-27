@@ -8,16 +8,30 @@ public class MissionHandler {
     public static List<TimeRestrictedMission> allTimeRestrictedMissions;
     public static List<ExecutableMission> allExevutableMissions;
 
-    // public MissionHandler() {
-    //     if (allOnTimeMissions == null) {
-    //         setLevel1Missions();
-    //     }
-    // }
+    public static List< Mission> getAllMissions(bool relevant=true) {
+        var missionList = new List<Mission>();
+        foreach (var mission in allOnTimeMissions) {
+            if (mission.isStillRelevant() == relevant) {
+                missionList.Add(mission);
+            }
+        }
+        return missionList;
+    }
+
+    public static int GetCurrentECTSCount() {
+        var count = 0;
+        foreach (var mission in allOnTimeMissions) {
+            if(mission.WasFinalised) {
+                count += mission.ectss;
+            }
+        }
+        return count;
+    }
     
     public static void setLevel1Missions() {
         allOnTimeMissions = new List<OnTimeMission>();
         allOnTimeMissions.Add(new OnTimeMission(1, "A101", 10f) { Description = "Misja 1"});
-        allOnTimeMissions.Add(new OnTimeMission(2, "A201", 40f) { Description = "Misja 2 tak trochê d³u¿sza"});
+        allOnTimeMissions.Add(new OnTimeMission(2, "A201", 40f) { Description = "Misja 2 tak troche dluzsza"});
 
         allCollectMissions = new List<CollectMission>();
         allCollectMissions.Add(new CollectMission(5, 5, "CD") { Description = "Collect items mission"});
@@ -28,11 +42,11 @@ public class MissionHandler {
     }
 
     public static void executeMissionForRoomNumber(string roomNumber) {
-        Debug.Log(roomNumber);
+        // Debug.Log(roomNumber);
         foreach(var mission in allOnTimeMissions) {
             if(mission.roomNumber == roomNumber) {
                 mission.setFinalisedIfAllowed();
-                Debug.Log(GetUnfinishedMissionsCount());
+                // Debug.Log(GetUnfinishedMissionsCount());
             }
         }
     }
