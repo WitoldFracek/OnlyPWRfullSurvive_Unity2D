@@ -31,7 +31,7 @@ public class MissionHandler {
     public static void setLevel1Missions() {
         allOnTimeMissions = new List<OnTimeMission>();
         allOnTimeMissions.Add(new OnTimeMission(1, "A101", 10f) { Description = "Misja 1"});
-        allOnTimeMissions.Add(new OnTimeMission(2, "A201", 40f) { Description = "Misja 2 tak troche dluzsza"});
+        allOnTimeMissions.Add(new OnTimeMission(2, "A201", 20f) { Description = "Misja 2 tak troche dluzsza"});
 
         allCollectMissions = new List<CollectMission>();
         allCollectMissions.Add(new CollectMission(5, 5, "CD") { Description = "Collect items mission"});

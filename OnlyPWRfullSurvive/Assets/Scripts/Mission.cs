@@ -34,13 +34,21 @@ public class Mission {
 }
 
 public class TimeRestrictedMission : Mission {
+    public string roomNumber {get; private set;}
     private float maxTimeToFinish;
-    public TimeRestrictedMission(int ectss, float maxTimeToFinish) : base(ectss) {
+    public TimeRestrictedMission(int ectss, string roomNumber, float maxTimeToFinish) : base(ectss) {
         this.maxTimeToFinish = maxTimeToFinish;
+        this.roomNumber = roomNumber;
     }
 
     override public bool canBeFinalised() {
         return TimeTracker.timeTracker <= maxTimeToFinish;
+    }
+
+    public override string ToString()
+    {
+        return "MAX " + TimeTracker.GetTimePretty(maxTimeToFinish) 
+        + " - " + roomNumber + " - " + base.ToString();
     }
 }
 
@@ -65,7 +73,8 @@ public class OnTimeMission : Mission {
 
     public override string ToString()
     {
-        return TimeTracker.GetTimePretty(timeToDoMission) + " (+" + maxHowLateSec + ") - " + base.ToString();
+        return "ON  " + TimeTracker.GetTimePretty(timeToDoMission) 
+        + " - " + roomNumber + " - " + base.ToString();
     }
 }
 
