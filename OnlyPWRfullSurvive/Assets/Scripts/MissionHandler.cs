@@ -10,7 +10,7 @@ public class MissionHandler {
 
     public static List< Mission> getAllMissions(bool relevant=true) {
         var missionList = new List<Mission>();
-        foreach (var mission in allOnTimeMissions) {
+        foreach (var mission in GetAllMissions()) {
             if (mission.isStillRelevant() == relevant) {
                 missionList.Add(mission);
             }
@@ -20,7 +20,7 @@ public class MissionHandler {
 
     public static int GetCurrentECTSCount() {
         var count = 0;
-        foreach (var mission in allOnTimeMissions) {
+        foreach (var mission in GetAllMissions()) {
             if(mission.WasFinalised) {
                 count += mission.ectss;
             }
@@ -39,14 +39,18 @@ public class MissionHandler {
         allExevutableMissions = new List<ExecutableMission>();
 
         allTimeRestrictedMissions = new List<TimeRestrictedMission>();
+        allTimeRestrictedMissions.Add(new TimeRestrictedMission(1, "A102", 30f));
     }
 
     public static void executeMissionForRoomNumber(string roomNumber) {
-        // Debug.Log(roomNumber);
         foreach(var mission in allOnTimeMissions) {
             if(mission.roomNumber == roomNumber) {
                 mission.setFinalisedIfAllowed();
-                // Debug.Log(GetUnfinishedMissionsCount());
+            }
+        }
+        foreach(var mission in allTimeRestrictedMissions) {
+            if(mission.roomNumber == roomNumber) {
+                mission.setFinalisedIfAllowed();
             }
         }
     }
