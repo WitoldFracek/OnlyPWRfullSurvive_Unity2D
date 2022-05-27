@@ -1,6 +1,7 @@
 public class Mission {
     public bool WasFinalised { get; protected set;}
     private int ectss;
+    public string Description { get; set; }
 
     public Mission(int ectss) {
         WasFinalised = false;
