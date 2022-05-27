@@ -33,12 +33,18 @@ public class Mission {
     }
 }
 
-public class TimeRestrictedMission : Mission {
+public class RoomRelatedMission : Mission {
     public string roomNumber {get; private set;}
-    private float maxTimeToFinish;
-    public TimeRestrictedMission(int ectss, string roomNumber, float maxTimeToFinish) : base(ectss) {
-        this.maxTimeToFinish = maxTimeToFinish;
+
+    public RoomRelatedMission(int ectss, string roomNumber) : base(ectss) {
         this.roomNumber = roomNumber;
+    }
+}
+
+public class TimeRestrictedMission : RoomRelatedMission {
+    private float maxTimeToFinish;
+    public TimeRestrictedMission(int ectss, string roomNumber, float maxTimeToFinish) : base(ectss, roomNumber) {
+        this.maxTimeToFinish = maxTimeToFinish;
     }
 
     override public bool canBeFinalised() {
@@ -52,13 +58,11 @@ public class TimeRestrictedMission : Mission {
     }
 }
 
-public class OnTimeMission : Mission {
-    public string roomNumber {get; private set;}
+public class OnTimeMission : RoomRelatedMission {
     private float timeToDoMission;
     private static float maxHowLateSec = 5f;
-    public OnTimeMission(int ectss, string roomNumber, float maxTimeToFinish) : base(ectss) {
+    public OnTimeMission(int ectss, string roomNumber, float maxTimeToFinish) : base(ectss, roomNumber) {
         this.timeToDoMission = maxTimeToFinish;
-        this.roomNumber = roomNumber;
     }
 
     override public bool canBeFinalised() {

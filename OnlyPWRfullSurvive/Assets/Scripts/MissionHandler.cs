@@ -43,12 +43,10 @@ public class MissionHandler {
     }
 
     public static void executeMissionForRoomNumber(string roomNumber) {
-        foreach(var mission in allOnTimeMissions) {
-            if(mission.roomNumber == roomNumber) {
-                mission.setFinalisedIfAllowed();
-            }
-        }
-        foreach(var mission in allTimeRestrictedMissions) {
+        var allRoomRelatedMissions = new List<RoomRelatedMission>();
+        allRoomRelatedMissions.AddRange(allOnTimeMissions);
+        allRoomRelatedMissions.AddRange(allTimeRestrictedMissions);
+        foreach(var mission in allRoomRelatedMissions) {
             if(mission.roomNumber == roomNumber) {
                 mission.setFinalisedIfAllowed();
             }
