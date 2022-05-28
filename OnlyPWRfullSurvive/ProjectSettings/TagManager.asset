@@ -7,6 +7,7 @@ TagManager:
   - Collectable
   - Timer
   - GoToDiffScene
+  - Music
   layers:
   - Default
   - TransparentFX

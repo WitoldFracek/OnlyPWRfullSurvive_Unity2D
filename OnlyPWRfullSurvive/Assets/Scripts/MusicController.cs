@@ -25,6 +25,8 @@ public class MusicController : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
             musicController = this;
+            this.slider.value = this.audioSource.volume;
+            this.audioSource.Play();
         }
         else if (musicController != this)
         {
