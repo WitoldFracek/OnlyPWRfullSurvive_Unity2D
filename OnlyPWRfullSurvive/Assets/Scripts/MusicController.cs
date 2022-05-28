@@ -13,11 +13,13 @@ public class MusicController : MonoBehaviour
 
     [SerializeField] Slider slider;
     [SerializeField] Toggle toggle;
+    [SerializeField] AudioClip audioClip;
 
     private float lastSavedVolume;
     private bool lastSavedMusicState;
 
     public static MusicController musicController;
+
 
     private void Awake()
     {
