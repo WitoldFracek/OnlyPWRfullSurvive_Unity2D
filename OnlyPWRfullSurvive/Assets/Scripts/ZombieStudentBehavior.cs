@@ -16,19 +16,20 @@ public class ZombieStudentBehavior : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        agent.SetDestination(point1.position);
     }
     void Update()
     {
         if(isPoint1Destination) {
-            agent.SetDestination(point1.position);
             if((point1.transform.position - this.transform.position).sqrMagnitude < distance) {
                 isPoint1Destination = false;
+                agent.SetDestination(point2.position);
             }
         }
         else {
-            agent.SetDestination(point2.position);
             if((point2.transform.position - this.transform.position).sqrMagnitude < distance) {
                 isPoint1Destination = true;
+                agent.SetDestination(point1.position);
             }
         }
     }
