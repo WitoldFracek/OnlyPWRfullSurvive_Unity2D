@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorRangeBehavior : PlayerInRange
+public class DoorRangeBehavior : PlayerOver
 {
     [SerializeField]
     private string doorNumber;
