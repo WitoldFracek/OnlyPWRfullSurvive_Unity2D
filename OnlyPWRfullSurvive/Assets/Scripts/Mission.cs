@@ -1,4 +1,5 @@
 public class Mission {
+    private static int maxNameLength = 20;
     public bool WasFinalised { get; protected set;}
     public int ectss {get; private set;}
     public string Description { get; set; }
@@ -25,11 +26,15 @@ public class Mission {
 
     public override string ToString()
     {
-        var prevText = ectss + " ECTS - ";
+        var prevText = Description.PadRight(maxNameLength) + " ECTS " + ectss;
         if(WasFinalised) {
             prevText += "DONE ";
         }
-        return prevText + Description;
+        return prevText;
+    }
+
+    public virtual int GetECTSPoints() {
+        return ectss;
     }
 }
 
@@ -53,8 +58,8 @@ public class TimeRestrictedMission : RoomRelatedMission {
 
     public override string ToString()
     {
-        return "MAX " + TimeTracker.GetTimePretty(maxTimeToFinish) 
-        + " - " + roomNumber + " - " + base.ToString();
+        return base.ToString() + " MAX " + TimeTracker.GetTimePretty(maxTimeToFinish) 
+        + " - " + roomNumber;
     }
 }
 
@@ -77,8 +82,8 @@ public class OnTimeMission : RoomRelatedMission {
 
     public override string ToString()
     {
-        return "ON  " + TimeTracker.GetTimePretty(timeToDoMission) 
-        + " - " + roomNumber + " - " + base.ToString();
+        return base.ToString() + " ON  " + TimeTracker.GetTimePretty(timeToDoMission) 
+        + " - " + roomNumber;
     }
 }
 
@@ -105,6 +110,14 @@ public class CollectMission: Mission {
         return currentCount < maxCount;
     }
 
+    override public int GetECTSPoints() {
+        return ectss*currentCount/maxCount;
+    }
+
+    public override string ToString()
+    {
+        return base.ToString() + " (" + GetECTSPoints() + $"/{ectss})" ;
+    }
 }
 
 public class ExecutableMission: Mission {
@@ -112,11 +125,15 @@ public class ExecutableMission: Mission {
     public float Duration { get; protected set; }
 
     public ExecutableMission(int ects, float duration): base(ects) {
-        Duration = duration;
+        this.Duration = duration;
     }
 
     override public bool canBeFinalised() {
         return TimeTracker.timeTracker + Duration < TimeTracker.maxTime;
     }
 
+    public override string ToString()
+    {
+        return base.ToString() + " " + Duration + " min" ;
+    }
 }

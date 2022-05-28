@@ -22,7 +22,7 @@ public class MissionHandler {
         var count = 0;
         foreach (var mission in GetAllMissions()) {
             if(mission.WasFinalised) {
-                count += mission.ectss;
+                count += mission.GetECTSPoints();
             }
         }
         return count;
@@ -30,16 +30,18 @@ public class MissionHandler {
     
     public static void setLevel1Missions() {
         allOnTimeMissions = new List<OnTimeMission>();
-        allOnTimeMissions.Add(new OnTimeMission(1, "A101", 10f) { Description = "Misja 1"});
-        allOnTimeMissions.Add(new OnTimeMission(2, "A201", 20f) { Description = "Misja 2 tak troche dluzsza"});
-
         allCollectMissions = new List<CollectMission>();
-        allCollectMissions.Add(new CollectMission(5, 5, "CD") { Description = "Collect items mission"});
-
         allExevutableMissions = new List<ExecutableMission>();
-
         allTimeRestrictedMissions = new List<TimeRestrictedMission>();
-        allTimeRestrictedMissions.Add(new TimeRestrictedMission(1, "A102", 30f));
+
+        allOnTimeMissions.Add(new OnTimeMission(1, "A101", 10f) { Description = "W Cyberki"});
+        allOnTimeMissions.Add(new OnTimeMission(2, "A201", 20f) { Description = "L Android"});
+
+        allCollectMissions.Add(new CollectMission(5, 5, "CD") { Description = "Collect wires"});
+
+        allExevutableMissions.Add(new ExecutableMission(1, 60f) { Description = "Sprawozdanie cyberki"});
+
+        allTimeRestrictedMissions.Add(new TimeRestrictedMission(1, "A102", 30f) { Description = "Dokumenty dziekanat"});
     }
 
     public static void executeMissionForRoomNumber(string roomNumber) {
