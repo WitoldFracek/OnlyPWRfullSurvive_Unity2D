@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     // Params
     public float movmentSpeed = 4000f;
     [Range(0, 0.5f)][SerializeField] public float movementSmoothing = 0.01f;
+    [SerializeField] GameObject otherPlayer;
+    [SerializeField] CameraFollowingHandler cameraHandler;
 
     [SerializeField] InputActionMap actionMap;
     [SerializeField] Rigidbody2D rigidBody;
@@ -20,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     private float moveRight = 0f;
     private float moveDown = 0f;
     private float moveUp = 0f;
+
+    private bool isOtherPlayerInGame = false;
 
     
     void Start()
@@ -51,6 +55,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void SetupMovementKeys() {
+        if (otherPlayer != null)
+        {
+            actionMap["OtherPlayer"].performed += ctx => ToggleOtherPlayer();
+        }
+        
         // actionMap["Up"].started += cts => MovePlayer(0, 1);
         // actionMap["Up"].canceled += cts => StopPlayer();
         // actionMap["Down"].started += cts => MovePlayer(0, -1);
@@ -59,6 +68,22 @@ public class PlayerMovement : MonoBehaviour
         // actionMap["Left"].canceled += cts => StopPlayer();
         // actionMap["Right"].started += cts => MovePlayer(1, 0);
         // actionMap["Right"].canceled += cts => StopPlayer();
+    }
+
+    private void ToggleOtherPlayer()
+    {
+        isOtherPlayerInGame = !isOtherPlayerInGame;
+        if(isOtherPlayerInGame)
+        {
+            otherPlayer.SetActive(true);
+            cameraHandler.SetupOtherTarget(otherPlayer.transform);
+            otherPlayer.transform.position = transform.position;
+        }
+        else
+        {
+            otherPlayer.SetActive(false);
+            cameraHandler.SetupOtherTarget(null);
+        }
     }
 
     
