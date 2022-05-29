@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -72,16 +73,32 @@ public class HUDController : MonoBehaviour
     public void MatchCommand()
     {
         string command = consoleInput.text;
+        string resultText = "";
         consoleResult.text = "";
         switch(command.ToLower())
         {
+            case "":
+                break;
             case "debug":
                 Debug.Log("debug");
                 break;
+            case "ipconfig":
+                string address = GetLocalIPAddress();
+                resultText = $"Network address:\n{address}";
+                break;
+            case "tell me a joke":
+                resultText = "Your life. Oh sorry! I din't mean to...";
+                break;
             default:
-                consoleResult.text = $"'{command}' is not recognized as an internal or external command, operable program or batch file.";
+                if(TryAddress(command))
+                {
+                    resultText = "Yes, this is your IP address. Congrats...";
+                    break;
+                }
+                resultText = $"'{command}' is not recognized as an internal or external command, operable program or batch file.";
                 break;
         }
+        consoleResult.text = resultText;
         consoleInput.text = "";
     }
 
@@ -109,5 +126,24 @@ public class HUDController : MonoBehaviour
         SetECTS(MissionHandler.GetCurrentECTSCount());
         missionDisplay.text = getMissionsPretty(MissionHandler.getAllMissions());
         finalissedMissionDisplay.text = getMissionsPretty(MissionHandler.getAllMissions(false));
+    }
+
+    private string GetLocalIPAddress()
+    {
+        var host = Dns.GetHostEntry(Dns.GetHostName());
+        foreach(var ip in host.AddressList)
+        {
+            if(ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            {
+                return ip.ToString();
+            }
+        }
+        return "No connection";
+    }
+
+    private bool TryAddress(string address)
+    {
+        string localAddress = GetLocalIPAddress();
+        return localAddress == address;
     }
 }
