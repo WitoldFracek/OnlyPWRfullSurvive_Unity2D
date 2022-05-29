@@ -1,12 +1,13 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
-public class CollectableHandler : MonoBehaviour
+class InteractableHandler: MonoBehaviour
 {
-    [SerializeField] public string collectableTag;
+    [SerializeField] HUDController hud;
     [SerializeField] GameObject textHint;
+    [SerializeField] string mode;
 
     private void Start()
     {
@@ -15,7 +16,7 @@ public class CollectableHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             textHint.SetActive(true);
         }
@@ -29,4 +30,16 @@ public class CollectableHandler : MonoBehaviour
         }
     }
 
+    public void Interact()
+    {
+        if(mode == "laptop")
+        {
+            ShowLaptop();
+        }
+    }
+
+    private void ShowLaptop()
+    {
+        hud.SetLaptopActive(true);
+    }
 }

@@ -8,6 +8,8 @@ TagManager:
   - Timer
   - GoToDiffScene
   - Music
+  - Item
+  - Interactable
   layers:
   - Default
   - TransparentFX

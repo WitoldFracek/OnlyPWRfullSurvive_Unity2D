@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour
 {
-    [SerializeField] GameObject player1;
-    [SerializeField] GameObject player2;
+    [SerializeField] public GameObject player1;
+    [SerializeField] public GameObject player2;
 
     //Dialog
     [SerializeField] GameObject dialogBox;
@@ -95,7 +95,6 @@ public class HUDController : MonoBehaviour
         laptop.SetActive(isActive);
     }
 
-    
 
 
     void Start()

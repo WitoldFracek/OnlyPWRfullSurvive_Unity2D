@@ -7,11 +7,17 @@ public class PlayerInteraction : MonoBehaviour {
 
     [SerializeField] InputActionMap actionMap;
     private GoDiffFloorBehavior goDiffFloor = null;
+    private InteractableHandler interactable;
 
     private void OnTriggerEnter2D(Collider2D other) {
         var diff = other.gameObject.GetComponent<GoDiffFloorBehavior>();
         if(diff != null) {
             goDiffFloor = diff;
+            return;
+        }
+        if(other.gameObject.tag == "Interactable")
+        {
+            interactable = other.gameObject.GetComponent<InteractableHandler>();
         }
     }
 
@@ -19,6 +25,11 @@ public class PlayerInteraction : MonoBehaviour {
         var diff = other.gameObject.GetComponent<GoDiffFloorBehavior>();
         if(diff != null) {
             goDiffFloor = null;
+            return;
+        }
+        if (other.gameObject.tag == "Interactable")
+        {
+            interactable = null;
         }
     }
 
@@ -29,6 +40,10 @@ public class PlayerInteraction : MonoBehaviour {
     private void Interact() {
         if(goDiffFloor != null) {
             goDiffFloor.goToNextScene();
+        }
+        if(interactable != null)
+        {
+            interactable.Interact();
         }
     }
     
