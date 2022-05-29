@@ -5,14 +5,29 @@ using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour
 {
+    [SerializeField] GameObject player1;
+    [SerializeField] GameObject player2;
+
+    //Dialog
     [SerializeField] GameObject dialogBox;
-    [SerializeField] GameObject missionBox;
     [SerializeField] Image npcImage;
     [SerializeField] Text dialogText;
+
+    // Missions
+    [SerializeField] GameObject missionBox;
     [SerializeField] Text timeDisplay;
     [SerializeField] Text ectsDisplay;
     [SerializeField] Text missionDisplay;
     [SerializeField] Text finalissedMissionDisplay;
+
+    // HealthBars
+    [SerializeField] EnergyBar player1Enegry;
+    [SerializeField] EnergyBar player2Energy;
+
+    // Laptop
+    [SerializeField] GameObject console;
+    [SerializeField] InputField consoleInput;
+    [SerializeField] Text consoleResult;
 
     // public void SetTime(float time)
     // {
@@ -51,6 +66,23 @@ public class HUDController : MonoBehaviour
     //     }
     //     missionDisplay.text = missionText;
     // }
+
+
+    public void MatchCommand()
+    {
+        string command = consoleInput.text;
+        consoleResult.text = "";
+        switch(command.ToLower())
+        {
+            case "debug":
+                Debug.Log("debug");
+                break;
+            default:
+                consoleResult.text = $"'{command}' is not recognized as an internal or external command, operable program or batch file.";
+                break;
+        }
+        consoleInput.text = "";
+    }
 
     
 
