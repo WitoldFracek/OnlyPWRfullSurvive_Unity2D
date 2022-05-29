@@ -25,9 +25,10 @@ public class HUDController : MonoBehaviour
     [SerializeField] EnergyBar player2Energy;
 
     // Laptop
-    [SerializeField] GameObject console;
+    [SerializeField] GameObject laptop;
     [SerializeField] InputField consoleInput;
     [SerializeField] Text consoleResult;
+    [SerializeField] List<GameObject> laptopIcons;
 
     // public void SetTime(float time)
     // {
@@ -82,6 +83,16 @@ public class HUDController : MonoBehaviour
                 break;
         }
         consoleInput.text = "";
+    }
+
+    public void SetDialogBoxActive(bool isActive)
+    {
+        dialogBox.SetActive(isActive);
+    }
+
+    public void SetLaptopActive(bool isActive)
+    {
+        laptop.SetActive(isActive);
     }
 
     
