@@ -720,11 +720,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 489038881146314559, guid: 554d59e342e882f4c9b3833226cfe5a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.1
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 489038881146314559, guid: 554d59e342e882f4c9b3833226cfe5a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.64
+      value: -3.48
       objectReference: {fileID: 0}
     - target: {fileID: 489038881146314559, guid: 554d59e342e882f4c9b3833226cfe5a3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -762,6 +762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interactable (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2695236193190181791, guid: 554d59e342e882f4c9b3833226cfe5a3, type: 3}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 614197621}
     - target: {fileID: 5414815748719896005, guid: 554d59e342e882f4c9b3833226cfe5a3, type: 3}
       propertyPath: hud
       value: 
@@ -770,7 +774,8 @@ PrefabInstance:
       propertyPath: mode
       value: laptop
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5414815748719896005, guid: 554d59e342e882f4c9b3833226cfe5a3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 554d59e342e882f4c9b3833226cfe5a3, type: 3}
 --- !u!1 &852251860
 GameObject:
@@ -10337,19 +10342,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6321335983513236345, guid: 4da37ab22e9c85748b99d31377160355, type: 3}
   m_PrefabInstance: {fileID: 6321335982315558975}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1222847303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1222847302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49897f448f7371246ab5a8b0fb674151, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextSceneName: F2
 --- !u!61 &1222847304
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14943,8 +14935,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6321335983513236345, guid: 4da37ab22e9c85748b99d31377160355, type: 3}
       propertyPath: m_TagString
-      value: GoToDiffScene
+      value: Interactable
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4918981439832685540, guid: 4da37ab22e9c85748b99d31377160355, type: 3}
+    - target: {fileID: 8817011925008238867, guid: 4da37ab22e9c85748b99d31377160355, type: 3}
+      propertyPath: nextSceneName
+      value: F2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4da37ab22e9c85748b99d31377160355, type: 3}

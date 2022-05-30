@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6321335983513236343}
   - component: {fileID: 6321335983513236344}
-  - component: {fileID: 4918981439832685540}
+  - component: {fileID: 8817011925008238867}
   m_Layer: 0
   m_Name: Stairs
   m_TagString: Untagged
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4918981439832685540
+--- !u!114 &8817011925008238867
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,6 +92,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6321335983513236345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 455e5dd1abbcbd049b51d369100f860a, type: 3}
+  m_Script: {fileID: 11500000, guid: 49897f448f7371246ab5a8b0fb674151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextSceneName: 

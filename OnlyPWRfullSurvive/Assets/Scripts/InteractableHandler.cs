@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-class InteractableHandler: MonoBehaviour
+public interface InteractAction {
+    void Interact();
+}
+
+public class InteractableHandler: MonoBehaviour, InteractAction
 {
-    [SerializeField] HUDController hud;
-    [SerializeField] GameObject textHint;
-    [SerializeField] string mode;
+    [SerializeField] protected HUDController hud;
+    [SerializeField] protected GameObject textHint;
 
     private void Start()
     {
@@ -30,16 +33,7 @@ class InteractableHandler: MonoBehaviour
         }
     }
 
-    public void Interact()
-    {
-        if(mode == "laptop")
-        {
-            ShowLaptop();
-        }
-    }
-
-    private void ShowLaptop()
-    {
-        hud.SetLaptopActive(true);
+    public virtual void Interact(){
+        Debug.Log("Method E not implemented");
     }
 }
