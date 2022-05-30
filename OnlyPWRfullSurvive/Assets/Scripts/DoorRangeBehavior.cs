@@ -6,6 +6,12 @@ public class DoorRangeBehavior : PlayerOver
 {
     [SerializeField]
     private string doorNumber;
+    [SerializeField]
+    private TextMesh text;
+
+    private void Start() {
+        text.text = doorNumber;
+    }
 
     override protected void whenInRange() {
         MissionHandler.executeMissionForRoomNumber(doorNumber);
