@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CollectableHandler : MonoBehaviour
+public class CollectableHandler : MonoBehaviour, InteractAction
 {
     [SerializeField] public string collectableTag;
     [SerializeField] GameObject textHint;
@@ -29,4 +29,9 @@ public class CollectableHandler : MonoBehaviour
         }
     }
 
+    public void Interact()
+    {
+        MissionHandler.PassCollectable(collectableTag);
+        Destroy(gameObject);
+    }
 }

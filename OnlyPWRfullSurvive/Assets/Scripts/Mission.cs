@@ -101,9 +101,6 @@ public class CollectMission: Mission {
 
     public void AddOneItem() {
         currentCount += 1;
-        // if(currentCount >= maxCount) {
-        //     WasFinalised = true;
-        // }
     }
 
     override public bool isStillRelevant() {

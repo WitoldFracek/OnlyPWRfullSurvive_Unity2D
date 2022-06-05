@@ -37,7 +37,7 @@ public class MissionHandler {
         allOnTimeMissions.Add(new OnTimeMission(1, "A101", 10f) { Description = "W Cyberki"});
         allOnTimeMissions.Add(new OnTimeMission(2, "A201", 20f) { Description = "L Android"});
 
-        allCollectMissions.Add(new CollectMission(5, 5, "CD") { Description = "Collect wires"});
+        allCollectMissions.Add(new CollectMission(5, 5, "CD") { Description = "Collect CDs"});
 
         allExevutableMissions.Add(new ExecutableMission(1, 60f) { Description = "Sprawozdanie cyberki"});
 
@@ -91,5 +91,17 @@ public class MissionHandler {
             }
         }
         return counter;
+    }
+
+    public static void PassCollectable(string collectableTag)
+    {
+        foreach(var mission in allCollectMissions)
+        {
+            if(mission.CollectableTag == collectableTag)
+            {
+                mission.AddOneItem();
+                Debug.Log("Item added " + collectableTag);
+            }
+        }
     }
 }

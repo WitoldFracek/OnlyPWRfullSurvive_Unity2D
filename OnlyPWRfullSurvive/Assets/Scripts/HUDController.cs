@@ -13,6 +13,8 @@ public class HUDController : MonoBehaviour
     [SerializeField] GameObject dialogBox;
     [SerializeField] Image npcImage;
     [SerializeField] Text dialogText;
+    [SerializeField] GameObject dialogAcceptBox;
+    [SerializeField] GameObject dialogNextBox;
 
     // Missions
     [SerializeField] GameObject missionBox;
@@ -30,6 +32,11 @@ public class HUDController : MonoBehaviour
     [SerializeField] InputField consoleInput;
     [SerializeField] Text consoleResult;
     [SerializeField] List<GameObject> laptopIcons;
+
+    //data passing
+    private List<string> standingNpcMessages = null;
+    private int dialogIndex = 0;
+    private Sprite standingNpcSprite = null;
 
     // public void SetTime(float time)
     // {
@@ -112,11 +119,38 @@ public class HUDController : MonoBehaviour
         laptop.SetActive(isActive);
     }
 
-
-
-    void Start()
+    public void PassDialogParameters(List<string> dialogList, Sprite npcSprite)
     {
+        standingNpcMessages = dialogList;
+        dialogIndex = 0;
+        standingNpcSprite = npcSprite;
+    }
 
+    public void StartDialog(bool isOption = false)
+    {
+        dialogText.text = standingNpcMessages[0];
+        npcImage.sprite = standingNpcSprite;
+        SetDialogBoxActive(true);
+        if(isOption)
+        {
+            dialogAcceptBox.SetActive(true);
+        } else
+        {
+            dialogNextBox.SetActive(true);
+        }
+    }
+
+    public void DialogNext()
+    {
+        dialogIndex += 1;
+        if(dialogIndex >= standingNpcMessages.Count)
+        {
+            dialogText.text = "";
+            dialogNextBox.SetActive(false);
+            SetDialogBoxActive(false);
+            return;
+        }
+        dialogText.text = standingNpcMessages[dialogIndex];
     }
 
     
