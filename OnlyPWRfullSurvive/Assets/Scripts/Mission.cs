@@ -122,7 +122,7 @@ public class ExecutableMission: Mission {
     public float Duration { get; protected set; }
 
     public ExecutableMission(int ects, float duration): base(ects) {
-        this.Duration = duration;
+        Duration = duration;
     }
 
     override public bool canBeFinalised() {

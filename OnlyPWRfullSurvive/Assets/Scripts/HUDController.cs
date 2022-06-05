@@ -162,6 +162,11 @@ public class HUDController : MonoBehaviour
         finalissedMissionDisplay.text = getMissionsPretty(MissionHandler.getAllMissions(false));
     }
 
+
+
+
+
+
     private string GetLocalIPAddress()
     {
         var host = Dns.GetHostEntry(Dns.GetHostName());
