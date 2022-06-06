@@ -9,7 +9,7 @@ public class Mission {
         this.ectss = ectss;
     }
 
-    public void setFinalisedIfAllowed() {
+    public virtual void setFinalisedIfAllowed() {
         if(canBeFinalised()) {
             WasFinalised = true;
         }
@@ -132,5 +132,16 @@ public class ExecutableMission: Mission {
     public override string ToString()
     {
         return base.ToString() + " " + Duration + " min" ;
+    }
+
+    public string FileDescription() {
+        return Description + "\n" + Duration + " min" + "\n" + ectss + " ECTS";
+    }
+
+    public override void setFinalisedIfAllowed() {
+        if(canBeFinalised()) {
+            WasFinalised = true;
+            TimeTracker.timeTracker += Duration;
+        }
     }
 }

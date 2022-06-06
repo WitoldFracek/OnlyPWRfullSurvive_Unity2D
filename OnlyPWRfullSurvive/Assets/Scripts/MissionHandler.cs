@@ -40,6 +40,7 @@ public class MissionHandler {
         allCollectMissions.Add(new CollectMission(5, 5, "CD") { Description = "Collect CDs"});
 
         allExevutableMissions.Add(new ExecutableMission(1, 60f) { Description = "Sprawozdanie cyberki"});
+        allExevutableMissions.Add(new ExecutableMission(2, 90f) { Description = "Sprawozdanie hurtownia"});
 
         allTimeRestrictedMissions.Add(new TimeRestrictedMission(1, "A102", 30f) { Description = "Dokumenty dziekanat"});
     }
@@ -60,6 +61,9 @@ public class MissionHandler {
             mission.AddOneItem();
         }
         
+    }
+    public static void ExecuteExecutableMission(int missionInx) {
+        allExevutableMissions[missionInx].setFinalisedIfAllowed();
     }
 
     public static List<Mission> GetAllMissions()

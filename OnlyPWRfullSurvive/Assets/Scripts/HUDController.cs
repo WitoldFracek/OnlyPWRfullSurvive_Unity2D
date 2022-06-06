@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class HUDController : MonoBehaviour
 {
@@ -112,11 +113,28 @@ public class HUDController : MonoBehaviour
     public void SetDialogBoxActive(bool isActive)
     {
         dialogBox.SetActive(isActive);
+        foreach(var icon in laptopIcons) {
+            icon.GetComponent<HUDIconBehaviour>().makeInvisibleVisible();
+        }
     }
 
     public void SetLaptopActive(bool isActive)
     {
         laptop.SetActive(isActive);
+        setExecutableMissions();
+    }
+
+    public void setExecutableMissions()
+    {
+        // this function will throw exception if there are more than 3 executable missins
+        // fix this if time allows
+        var counter = 0;
+        foreach(var mission in MissionHandler.allExevutableMissions) {
+            if(!mission.WasFinalised) {
+                laptopIcons[counter].GetComponent<HUDIconBehaviour>().setMissionInx(counter);
+            }
+            counter ++;
+        }
     }
 
     public void PassDialogParameters(List<string> dialogList, Sprite npcSprite)
