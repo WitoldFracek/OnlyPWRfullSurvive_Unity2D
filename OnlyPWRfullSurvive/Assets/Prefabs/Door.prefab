@@ -186,7 +186,7 @@ TextMesh:
   m_Anchor: 4
   m_Alignment: 0
   m_TabSize: 6
-  m_FontSize: 12
+  m_FontSize: 10
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 0}

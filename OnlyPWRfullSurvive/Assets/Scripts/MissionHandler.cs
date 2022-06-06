@@ -21,7 +21,10 @@ public class MissionHandler {
     public static int GetCurrentECTSCount() {
         var count = 0;
         foreach (var mission in GetAllMissions()) {
-            if(mission.WasFinalised) {
+            if(mission.WasFinalised && mission.GetType() != typeof(CollectMission)) {
+                count += mission.GetECTSPoints();
+            }
+            else if (mission.GetType() == typeof(CollectMission)) {
                 count += mission.GetECTSPoints();
             }
         }
