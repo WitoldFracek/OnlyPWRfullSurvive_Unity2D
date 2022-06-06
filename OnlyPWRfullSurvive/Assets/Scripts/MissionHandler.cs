@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class MissionHandler {
+public static class MissionHandler {
     public static List<OnTimeMission> allOnTimeMissions;
     public static List<CollectMission> allCollectMissions;
     public static List<TimeRestrictedMission> allTimeRestrictedMissions;
@@ -16,6 +16,10 @@ public class MissionHandler {
             }
         }
         return missionList;
+    }
+
+    public static bool areMissionsSetup(){
+        return allCollectMissions != null;
     }
 
     public static int GetCurrentECTSCount() {

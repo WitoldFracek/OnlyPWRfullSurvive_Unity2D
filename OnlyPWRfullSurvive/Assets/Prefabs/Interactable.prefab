@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7862337351420571622}
   - component: {fileID: 9134819187301449730}
   - component: {fileID: 2695236193190181791}
+  - component: {fileID: 2505487485263764556}
   m_Layer: 10
   m_Name: Interactable
   m_TagString: Interactable
@@ -125,6 +126,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hud: {fileID: 0}
   textHint: {fileID: 5605396767450878569}
+--- !u!61 &2505487485263764556
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696879337706013988}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5260072, y: 1.3150189}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7.68, y: 3.27}
+    newSize: {x: 7.68, y: 7.68}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.40063, y: 0.63996214}
+  m_EdgeRadius: 0
 --- !u!1 &5605396767450878569
 GameObject:
   m_ObjectHideFlags: 0
