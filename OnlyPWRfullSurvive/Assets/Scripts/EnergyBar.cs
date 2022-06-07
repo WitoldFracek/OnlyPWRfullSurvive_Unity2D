@@ -17,25 +17,13 @@ public class EnergyBar : MonoBehaviour {
         slider.value = Mathf.Min(energy, slider.maxValue);
     }
 
-    public void ChangeEnergyLevelBy(int diff) {
-        slider.value = Mathf.Min(slider.value + diff, slider.maxValue);
-        if(slider.value < Constants.maxEnergyLevel / 4) {
-            slider.GetComponentInChildren<Image>().color = Color.red;
-        }
-        else {
-            slider.GetComponentInChildren<Image>().color = Color.blue;
-        }
-    }
-
-    public void SetMax() {
-        slider.value = Constants.maxEnergyLevel;
-        slider.GetComponentInChildren<Image>().color = Color.blue;
-    }
-
     public void Update() {
         SetEnergyLevel(BetweenScenesParams.currentEnergyLevel);
         if(slider.value < Constants.maxEnergyLevel / 4) {
             slider.GetComponentInChildren<Image>().color = Color.red;
+        }
+        else {
+            slider.GetComponentInChildren<Image>().color = new Color(0, 148, 255);
         }
         if(BetweenScenesParams.currentEnergyLevel == 0) {
             SceneManager.LoadScene("EndingScreen");
