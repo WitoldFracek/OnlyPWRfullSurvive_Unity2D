@@ -31,7 +31,7 @@ public class PlayerPickUpItem : MonoBehaviour {
         actionMap["Interact"].performed += ctx => CollectItem();
     }
 
-    private void CollectItem() {
+    public void CollectItem() {
         if(collectable != null) {
             Destroy(collectable);
             collectable = null;

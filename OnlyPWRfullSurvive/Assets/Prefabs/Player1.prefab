@@ -2547,6 +2547,7 @@ MonoBehaviour:
       m_Action: Right
       m_Flags: 0
   rigidBody: {fileID: 7475387315567720542}
+  PlayerPickUpItem: {fileID: 0}
 --- !u!1 &7475387315652837012
 GameObject:
   m_ObjectHideFlags: 0
@@ -3163,6 +3164,7 @@ MonoBehaviour:
       m_Action: OtherPlayer
       m_Flags: 0
   rigidBody: {fileID: 7475387315722731992}
+  PlayerPickUpItem: {fileID: 7475387315722731999}
 --- !u!50 &7475387315722731992
 Rigidbody2D:
   serializedVersion: 4

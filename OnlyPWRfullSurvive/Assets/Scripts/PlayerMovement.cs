@@ -25,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isOtherPlayerInGame = false;
 
+    [SerializeField]
+    private PlayerPickUpItem playerPickUpItem;
+
     
     void Start()
     {
@@ -44,6 +47,15 @@ public class PlayerMovement : MonoBehaviour
         moveRight = movmentSpeed * actionMap["Right"].ReadValue<float>();
         Vector2 targetVelocity = new Vector2(moveRight - moveLeft, moveUp - moveDown);
         rigidBody.velocity = Vector3.SmoothDamp(rigidBody.velocity, targetVelocity, ref velocity, movementSmoothing);
+        if (Input.touchCount > 0) {
+            Vector2 touch = Input.GetTouch(0).position;
+            touch.x -= Screen.width/2;
+            touch.y -= Screen.height/2;
+            touch = touch/20;
+            touch.y = touch.y * 2;
+            // Debug.Log($"{touch}");
+            rigidBody.AddForce(touch);
+        }
     }
 
     private void OnEnable() {
