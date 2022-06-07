@@ -2371,7 +2371,11 @@ MonoBehaviour:
   audioSource: {fileID: 986404927}
   slider: {fileID: 1646046477}
   toggle: {fileID: 302350470}
-  audioClip: {fileID: 8300000, guid: b39a42fefd9e5e64f883151de67c5b7e, type: 3}
+  audioClips:
+  - {fileID: 8300000, guid: e71d9a59b46b4ad48bafcd43dd73b812, type: 3}
+  - {fileID: 8300000, guid: 509ee053b7cbebc4b8b3813a7bf7ffa8, type: 3}
+  - {fileID: 8300000, guid: f06e73c0c9724a04eb0febe9de72b35f, type: 3}
+  - {fileID: 8300000, guid: 77772005c2b7a9e4c8cd7304e7cb8aed, type: 3}
 --- !u!82 &986404927
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2382,11 +2386,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 1f93a067e8656b240a9057bc59c6db81, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b39a42fefd9e5e64f883151de67c5b7e, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: e71d9a59b46b4ad48bafcd43dd73b812, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.52
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

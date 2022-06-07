@@ -13,7 +13,7 @@ public class MusicController : MonoBehaviour
 
     [SerializeField] Slider slider;
     [SerializeField] Toggle toggle;
-    [SerializeField] AudioClip audioClip;
+    [SerializeField] List<AudioClip> audioClips;
 
     private float lastSavedVolume;
     private bool lastSavedMusicState;
@@ -48,6 +48,20 @@ public class MusicController : MonoBehaviour
         }
         lastSavedVolume = slider.value;
         lastSavedMusicState = toggle.isOn;
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = GetRandomAudioClip();
+            audioSource.Play();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = GetRandomAudioClip();
+            audioSource.Play();
+        }
     }
 
     public void OnSliderChange(float volume)
@@ -67,5 +81,12 @@ public class MusicController : MonoBehaviour
             audioSource.Stop();
         }
         lastSavedMusicState = state;
+    }
+
+    private AudioClip GetRandomAudioClip()
+    {
+        var rnd = new System.Random();
+        int index = rnd.Next(0, audioClips.Count);
+        return audioClips[index];
     }
 }
