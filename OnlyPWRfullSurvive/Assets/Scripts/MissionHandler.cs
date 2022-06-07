@@ -42,14 +42,46 @@ public static class MissionHandler {
         allTimeRestrictedMissions = new List<TimeRestrictedMission>();
 
         allOnTimeMissions.Add(new OnTimeMission(1, "A101", 10f) { Description = "W Cyberki"});
+        allCollectMissions.Add(new CollectMission(5, 5, "CD") { Description = "Collect CDs"});
+        allExevutableMissions.Add(new ExecutableMission(1, 60f) { Description = "Sprawozdanie cyberki"});
+        allTimeRestrictedMissions.Add(new TimeRestrictedMission(1, "A102", 30f) { Description = "Dokumenty dziekanat"});
+    }
+
+    public static void setLevel2Missions() {
+        allOnTimeMissions = new List<OnTimeMission>();
+        allCollectMissions = new List<CollectMission>();
+        allExevutableMissions = new List<ExecutableMission>();
+        allTimeRestrictedMissions = new List<TimeRestrictedMission>();
+
+        allOnTimeMissions.Add(new OnTimeMission(1, "A101", 10f) { Description = "W Cyberki"});
+        allOnTimeMissions.Add(new OnTimeMission(2, "A201", 20f) { Description = "L Android"});
+
+        allCollectMissions.Add(new CollectMission(5, 5, "CD") { Description = "Collect pendrives"});
+
+        allExevutableMissions.Add(new ExecutableMission(1, 60f) { Description = "Sprawozdanie cyberki"});
+        allExevutableMissions.Add(new ExecutableMission(2, 90f) { Description = "Sprawozdanie hurtownia"});
+
+        allTimeRestrictedMissions.Add(new TimeRestrictedMission(1, "A102", 30f) { Description = "Dokumenty dziekanat"});
+    }
+
+    public static void setLevel3Missions() {
+        allOnTimeMissions = new List<OnTimeMission>();
+        allCollectMissions = new List<CollectMission>();
+        allExevutableMissions = new List<ExecutableMission>();
+        allTimeRestrictedMissions = new List<TimeRestrictedMission>();
+
+        allOnTimeMissions.Add(new OnTimeMission(1, "A101", 10f) { Description = "W Cyberki"});
+        allOnTimeMissions.Add(new OnTimeMission(2, "A201", 20f) { Description = "L Android"});
+        allOnTimeMissions.Add(new OnTimeMission(1, "A101", 10f) { Description = "W Cyberki"});
         allOnTimeMissions.Add(new OnTimeMission(2, "A201", 20f) { Description = "L Android"});
 
         allCollectMissions.Add(new CollectMission(5, 5, "CD") { Description = "Collect CDs"});
 
         allExevutableMissions.Add(new ExecutableMission(1, 60f) { Description = "Sprawozdanie cyberki"});
         allExevutableMissions.Add(new ExecutableMission(2, 90f) { Description = "Sprawozdanie hurtownia"});
+        allExevutableMissions.Add(new ExecutableMission(2, 90f) { Description = "Sprawozdanie ?"});
 
-        allTimeRestrictedMissions.Add(new TimeRestrictedMission(1, "A102", 30f) { Description = "Dokumenty dziekanat"});
+        allTimeRestrictedMissions.Add(new TimeRestrictedMission(1, "A102", 30f) { Description = "Praktyki"});
     }
 
     public static void executeMissionForRoomNumber(string roomNumber) {

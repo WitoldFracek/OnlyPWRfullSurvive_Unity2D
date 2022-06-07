@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BetweenBuildings.unity
     guid: b4343cb266c9be245b8f935c06e8bf71
+  - enabled: 1
+    path: Assets/Scenes/A1_base.unity
+    guid: d072111e2cba48a4795d8aafbaf4b0fa
+  - enabled: 1
+    path: Assets/Scenes/C13_base.unity
+    guid: 98882a8c75a9f294aa6d53323f7ef53b
   m_configObjects: {}

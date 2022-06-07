@@ -5,4 +5,5 @@ using UnityEngine;
 public static class BetweenScenesParams
 {
     public static string teleportPointId {get;set;}
+    public static int currentLevel {get;set;}
 }

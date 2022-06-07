@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuButtonBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -17,5 +18,24 @@ public class MenuButtonBehaviour : MonoBehaviour, IPointerEnterHandler, IPointer
     public void OnPointerExit(PointerEventData eventData)
     {
         buttonText.color = Color.white;
+    }
+
+    public void startLevel1() {
+        BetweenScenesParams.currentLevel = 1;
+        startGame();
+    }
+
+    public void startLevel2() {
+        BetweenScenesParams.currentLevel = 2;
+        startGame();
+    }
+
+    public void startLevel3() {
+        BetweenScenesParams.currentLevel = 3;
+        startGame();
+    }
+
+    private void startGame() {
+        SceneManager.LoadScene("BetweenBuildings");
     }
 }
