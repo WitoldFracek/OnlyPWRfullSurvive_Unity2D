@@ -10,6 +10,7 @@ public class TimeTracker : MonoBehaviour
     void FixedUpdate()
     {
         timeTracker += Time.deltaTime;
+        BetweenScenesParams.currentEnergyLevel -= 1;
     }
 
     protected virtual void OnTimerFinished() {

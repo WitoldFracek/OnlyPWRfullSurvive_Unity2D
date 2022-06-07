@@ -22,16 +22,19 @@ public class MenuButtonBehaviour : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void startLevel1() {
         BetweenScenesParams.currentLevel = 1;
+        BetweenScenesParams.currentEnergyLevel = Constants.maxEnergyLevel;
         startGame();
     }
 
     public void startLevel2() {
         BetweenScenesParams.currentLevel = 2;
+        BetweenScenesParams.currentEnergyLevel = Constants.maxEnergyLevel/2;
         startGame();
     }
 
     public void startLevel3() {
         BetweenScenesParams.currentLevel = 3;
+        BetweenScenesParams.currentEnergyLevel = Constants.maxEnergyLevel/3;
         startGame();
     }
 

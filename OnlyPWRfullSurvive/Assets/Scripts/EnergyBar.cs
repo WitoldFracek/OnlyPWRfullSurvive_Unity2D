@@ -7,10 +7,8 @@ using UnityEngine.UI;
 public class EnergyBar : MonoBehaviour {
 
     [SerializeField] Slider slider;
-    public int maxEnergy = 0;
-
     private void Start() {
-        slider.maxValue = maxEnergy;
+        slider.maxValue = Constants.maxEnergyLevel;
         slider.minValue = 0;
     }
 
@@ -18,4 +16,25 @@ public class EnergyBar : MonoBehaviour {
         slider.value = Mathf.Min(energy, slider.maxValue);
     }
 
+    public void ChangeEnergyLevelBy(int diff) {
+        slider.value = Mathf.Min(slider.value + diff, slider.maxValue);
+        if(slider.value < Constants.maxEnergyLevel / 4) {
+            slider.GetComponentInChildren<Image>().color = Color.red;
+        }
+        else {
+            slider.GetComponentInChildren<Image>().color = Color.blue;
+        }
+    }
+
+    public void SetMax() {
+        slider.value = Constants.maxEnergyLevel;
+        slider.GetComponentInChildren<Image>().color = Color.blue;
+    }
+
+    public void Update() {
+        SetEnergyLevel(BetweenScenesParams.currentEnergyLevel);
+        if(slider.value < Constants.maxEnergyLevel / 4) {
+            slider.GetComponentInChildren<Image>().color = Color.red;
+        }
+    }
 }
