@@ -21,5 +21,4 @@ public class MissionSetupScript : MonoBehaviour
         
         // hud.SetMissions(MissionHandler.GetAllUnfinishedMissions());
     }
-
 }

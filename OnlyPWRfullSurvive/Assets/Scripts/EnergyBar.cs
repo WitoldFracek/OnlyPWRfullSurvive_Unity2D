@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnergyBar : MonoBehaviour {
 
@@ -35,6 +36,9 @@ public class EnergyBar : MonoBehaviour {
         SetEnergyLevel(BetweenScenesParams.currentEnergyLevel);
         if(slider.value < Constants.maxEnergyLevel / 4) {
             slider.GetComponentInChildren<Image>().color = Color.red;
+        }
+        if(BetweenScenesParams.currentEnergyLevel == 0) {
+            SceneManager.LoadScene("EndingScreen");
         }
     }
 }

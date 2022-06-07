@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TimeTracker : MonoBehaviour
 {
     public static float timeTracker = 0f;
     public static float maxTime = 720f;
+    // public static float maxTime = 60f;
     public static float startTime = 8*60f;
     void FixedUpdate()
     {
         timeTracker += Time.deltaTime;
         BetweenScenesParams.currentEnergyLevel -= 1;
+        if(timeTracker > maxTime) {
+            SceneManager.LoadScene("EndingScreen");
+        }
     }
 
     protected virtual void OnTimerFinished() {
