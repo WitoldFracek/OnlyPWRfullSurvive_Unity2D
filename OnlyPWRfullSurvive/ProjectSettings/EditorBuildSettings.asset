@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/F1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/F2.unity
-    guid: 1bc8127a6d6b24341bd397a47534513f
+    path: Assets/Scenes/Dean_base.unity
+    guid: 9a949f4b7c32e114abb626c00a955862
+  - enabled: 1
+    path: Assets/Scenes/BetweenBuildings.unity
+    guid: b4343cb266c9be245b8f935c06e8bf71
   m_configObjects: {}

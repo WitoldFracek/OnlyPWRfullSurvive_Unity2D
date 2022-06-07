@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class TeleportPlayer : MonoBehaviour
 {
+    [SerializeField]
     private Transform player;
-    private void Awake() {
-        player = GameObject.Find("Player").GetComponent<Transform>();
-    }
     void Start()
     {
         var allTeleportToPotential = GameObject.FindObjectsOfType<GoDiffFloorBehavior>();

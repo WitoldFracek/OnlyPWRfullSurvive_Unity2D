@@ -10,7 +10,7 @@ public class PlayerOver : MonoBehaviour
     private Transform leftPoint, rightPoint;
     private Transform upPoint, downPoint;
     private void Awake() {
-        player = GameObject.Find("Player").GetComponent<Transform>();
+        player = GameObject.Find("Player1").GetComponent<Transform>();
         xRange = GetComponent<Renderer>().bounds.size.x / 2;
         yRange = GetComponent<Renderer>().bounds.size.y / 2;
     }
