@@ -10,6 +10,7 @@ TagManager:
   - Music
   - Item
   - Interactable
+  - HUD
   layers:
   - Default
   - TransparentFX

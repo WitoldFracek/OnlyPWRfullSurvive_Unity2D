@@ -1,3 +1,6 @@
+using System.Linq;
+using System.Collections.Generic;
+
 public class Mission {
     private static int maxNameLength = 20;
     public bool WasFinalised { get; protected set;}
@@ -90,6 +93,7 @@ public class OnTimeMission : RoomRelatedMission {
 public class CollectMission: Mission {
     
     public string CollectableTag { get; private set; }
+    public List<string> collectedIds { get; private set; }
     private int maxCount;
     private int currentCount;
 
@@ -97,10 +101,14 @@ public class CollectMission: Mission {
         this.CollectableTag = itemTag;
         this.maxCount = itemCount;
         this.currentCount = 0;
+        collectedIds = new List<string>();
     }
 
-    public void AddOneItem() {
+    public void AddOneItem(string id) {
         currentCount += 1;
+        if(id != "") {
+            collectedIds.Add(id);
+        }
     }
 
     override public bool isStillRelevant() {

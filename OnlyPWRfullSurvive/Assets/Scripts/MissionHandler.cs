@@ -56,7 +56,7 @@ public static class MissionHandler {
         allOnTimeMissions.Add(new OnTimeMission(1, "A101", 10f) { Description = "W Cyberki"});
         allOnTimeMissions.Add(new OnTimeMission(2, "A201", 20f) { Description = "L Android"});
 
-        allCollectMissions.Add(new CollectMission(5, 5, "CD") { Description = "Collect pendrives"});
+        allCollectMissions.Add(new CollectMission(5, 5, "PENDRIVE") { Description = "Collect pendrives"});
 
         allExevutableMissions.Add(new ExecutableMission(1, 60f) { Description = "Sprawozdanie cyberki"});
         allExevutableMissions.Add(new ExecutableMission(2, 90f) { Description = "Sprawozdanie hurtownia"});
@@ -94,13 +94,13 @@ public static class MissionHandler {
             }
         }
     }
-    public static void CollectOneItem(string itemTag) {
-        var mission = allCollectMissions.FirstOrDefault(m => m.CollectableTag == itemTag);
-        if(mission != null) {
-            mission.AddOneItem();
-        }
+    // public static void CollectOneItem(string itemTag) {
+    //     var mission = allCollectMissions.FirstOrDefault(m => m.CollectableTag == itemTag);
+    //     if(mission != null) {
+    //         mission.AddOneItem();
+    //     }
         
-    }
+    // }
     public static void ExecuteExecutableMission(int missionInx) {
         allExevutableMissions[missionInx].setFinalisedIfAllowed();
     }
@@ -136,14 +136,13 @@ public static class MissionHandler {
         return counter;
     }
 
-    public static void PassCollectable(string collectableTag)
+    public static void PassCollectable(CollectableHandler collectable)
     {
         foreach(var mission in allCollectMissions)
         {
-            if(mission.CollectableTag == collectableTag)
+            if(mission.CollectableTag == collectable.collectableTag)
             {
-                mission.AddOneItem();
-                Debug.Log("Item added " + collectableTag);
+                mission.AddOneItem(collectable.id);
             }
         }
     }

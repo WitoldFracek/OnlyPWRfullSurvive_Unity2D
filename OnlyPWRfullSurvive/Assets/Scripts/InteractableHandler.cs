@@ -9,11 +9,12 @@ public interface InteractAction {
 
 public class InteractableHandler: MonoBehaviour, InteractAction
 {
-    [SerializeField] protected HUDController hud;
+    protected HUDController hud;
     [SerializeField] protected GameObject textHint;
 
     private void Start()
     {
+        hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUDController>();
         textHint.SetActive(false);
     }
 

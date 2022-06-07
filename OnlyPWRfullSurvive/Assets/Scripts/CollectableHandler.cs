@@ -6,11 +6,23 @@ using UnityEngine.UI;
 public class CollectableHandler : MonoBehaviour, InteractAction
 {
     [SerializeField] public string collectableTag;
+    [SerializeField] public string id;
+    [SerializeField] public int level;
     [SerializeField] GameObject textHint;
 
     private void Start()
     {
         textHint.SetActive(false);
+        if(level == 0) return;
+        if(level != BetweenScenesParams.currentLevel) {
+            Destroy(gameObject);
+            return;
+        }
+        foreach(var mission in MissionHandler.allCollectMissions) {
+            if(mission.collectedIds.Contains(id)) {
+                Destroy(gameObject);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,7 +43,7 @@ public class CollectableHandler : MonoBehaviour, InteractAction
 
     public void Interact()
     {
-        MissionHandler.PassCollectable(collectableTag);
+        MissionHandler.PassCollectable(this);
         Destroy(gameObject);
     }
 }

@@ -748,7 +748,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 7475387314862889987}
-  maxEnergy: 100
 --- !u!1 &7475387314896988634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,7 +1384,7 @@ GameObject:
   - component: {fileID: 7475387316302767071}
   m_Layer: 0
   m_Name: HUD
-  m_TagString: Untagged
+  m_TagString: HUD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4592,7 +4591,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 7475387316496965346}
-  maxEnergy: 100
 --- !u!1 &7475387316497520878
 GameObject:
   m_ObjectHideFlags: 0
@@ -5094,6 +5092,10 @@ PrefabInstance:
       objectReference: {fileID: 7475387315567720865}
     - target: {fileID: 7233003985483057681, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}
       propertyPath: m_Name
+      value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233003985483057681, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}
+      propertyPath: m_TagString
       value: HUD
       objectReference: {fileID: 0}
     - target: {fileID: 7298425524725283374, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}

@@ -14,7 +14,7 @@ public class EndScreenHandler : MonoBehaviour
             title.text = $"You survived!\nYou have {MissionHandler.GetCurrentECTSCount()}/{Constants.maxEcts} ECTS";
         }
         else {
-            title.text = "You are not PWRfull enough!\nTry again.";
+            title.text = $"You are not PWRfull enough!\nYou need at least {Constants.minToPassEcts}/{Constants.maxEcts} ECTS to pass.\nYou have {MissionHandler.GetCurrentECTSCount()} ECTS";
         }
     }
 
