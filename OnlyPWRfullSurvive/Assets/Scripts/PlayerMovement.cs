@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -28,6 +29,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private PlayerPickUpItem playerPickUpItem;
 
+    [SerializeField]
+    private Button mobileUp, mobileDown, mobileLeft, mobileRight;
+
     
     void Start()
     {
@@ -47,15 +51,31 @@ public class PlayerMovement : MonoBehaviour
         moveRight = movmentSpeed * actionMap["Right"].ReadValue<float>();
         Vector2 targetVelocity = new Vector2(moveRight - moveLeft, moveUp - moveDown);
         rigidBody.velocity = Vector3.SmoothDamp(rigidBody.velocity, targetVelocity, ref velocity, movementSmoothing);
-        if (Input.touchCount > 0) {
-            Vector2 touch = Input.GetTouch(0).position;
-            touch.x -= Screen.width/2;
-            touch.y -= Screen.height/2;
-            touch = touch/20;
-            touch.y = touch.y * 2;
-            // Debug.Log($"{touch}");
-            rigidBody.AddForce(touch);
-        }
+        // if (Input.touchCount > 0) {
+        //     Vector2 touch = Input.GetTouch(0).position;
+        //     touch.x -= Screen.width/2;
+        //     touch.y -= Screen.height/2;
+        //     touch = touch/20;
+        //     touch.y = touch.y * 4;
+        //     // Debug.Log($"{touch}");
+        //     rigidBody.AddForce(touch);
+        // }
+    }
+
+    public void addForceRight() {
+        rigidBody.AddForce(new Vector2(1, 0) * 300);
+    }
+
+    public void addForceLeft() {
+        rigidBody.AddForce(new Vector2(-1, 0) * 300);
+    }
+
+    public void addForceUp() {
+        rigidBody.AddForce(new Vector2(0, 1) * 300);
+    }
+
+    public void addForceDown() {
+        rigidBody.AddForce(new Vector2(0, -1) * 300);
     }
 
     private void OnEnable() {

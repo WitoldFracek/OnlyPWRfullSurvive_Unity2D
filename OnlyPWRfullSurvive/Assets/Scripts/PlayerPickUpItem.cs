@@ -32,6 +32,7 @@ public class PlayerPickUpItem : MonoBehaviour {
     }
 
     public void CollectItem() {
+        Debug.Log($"E {collectable == null}");
         if(collectable != null) {
             Destroy(collectable);
             collectable = null;

@@ -24,7 +24,7 @@ public class PlayerInteraction : MonoBehaviour {
         actionMap["Interact"].performed += ctx => Interact();
     }
 
-    private void Interact() {
+    public void Interact() {
         if(interactable != null) {
             interactable.Interact();
         }
