@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteraction : MonoBehaviour {
 
-    [SerializeField] InputActionMap actionMap;
+    [SerializeField] public InputActionMap actionMap;
     private InteractAction interactable;
 
     private void OnTriggerEnter2D(Collider2D other) {

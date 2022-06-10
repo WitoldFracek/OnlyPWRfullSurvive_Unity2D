@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4812601525112540435}
   - component: {fileID: 3052536778006446604}
   - component: {fileID: 1647929647203848223}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: StandingNPC
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 1646495023881490302}
   - component: {fileID: 8742868270032508728}
   - component: {fileID: 3758247516568193269}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: InteractionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}

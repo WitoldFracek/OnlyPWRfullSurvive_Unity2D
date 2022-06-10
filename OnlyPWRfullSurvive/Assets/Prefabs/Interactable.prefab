@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9134819187301449730}
   - component: {fileID: 2695236193190181791}
   - component: {fileID: 2505487485263764556}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Interactable
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -124,7 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc68f3c6a4d7534195148cd911023e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hud: {fileID: 0}
   textHint: {fileID: 5605396767450878569}
 --- !u!61 &2505487485263764556
 BoxCollider2D:
@@ -163,7 +162,7 @@ GameObject:
   - component: {fileID: 4823109102375869346}
   - component: {fileID: 490839639367253513}
   - component: {fileID: 3308777047743430044}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: InteractionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,8 +177,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5605396767450878569}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 2.68, z: 0}
-  m_LocalScale: {x: 0.51178, y: 0.51178, z: 0.51178}
+  m_LocalPosition: {x: -1.1199, y: 2.789, z: 0}
+  m_LocalScale: {x: 0.61746264, y: 0.61746264, z: 0.61746264}
   m_Children: []
   m_Father: {fileID: 489038881146314559}
   m_RootOrder: 0

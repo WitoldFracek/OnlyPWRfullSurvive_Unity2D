@@ -25,11 +25,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 489038881146314559, guid: 7db40bd15790cb448b4f95b0156fe60e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9373
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 489038881146314559, guid: 7db40bd15790cb448b4f95b0156fe60e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.6492
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 489038881146314559, guid: 7db40bd15790cb448b4f95b0156fe60e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -68,8 +68,24 @@ PrefabInstance:
       value: Pendrive Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4823109102375869346, guid: 7db40bd15790cb448b4f95b0156fe60e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.40821263
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823109102375869346, guid: 7db40bd15790cb448b4f95b0156fe60e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.40821263
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823109102375869346, guid: 7db40bd15790cb448b4f95b0156fe60e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.40821263
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823109102375869346, guid: 7db40bd15790cb448b4f95b0156fe60e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.2237
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823109102375869346, guid: 7db40bd15790cb448b4f95b0156fe60e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.58
+      value: 2.4031
       objectReference: {fileID: 0}
     - target: {fileID: 7432518367631836024, guid: 7db40bd15790cb448b4f95b0156fe60e, type: 3}
       propertyPath: level

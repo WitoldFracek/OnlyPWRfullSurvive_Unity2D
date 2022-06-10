@@ -120,6 +120,8 @@ public class HUDController : MonoBehaviour
 
     public void SetLaptopActive(bool isActive)
     {
+        player1.GetComponent<PlayerMovement>().IsMovementPossible(!isActive);
+        player2.GetComponent<PlayerMovement>().IsMovementPossible(!isActive);
         laptop.SetActive(isActive);
         setExecutableMissions();
     }

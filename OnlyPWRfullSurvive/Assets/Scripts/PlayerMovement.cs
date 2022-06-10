@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject otherPlayer;
     [SerializeField] CameraFollowingHandler cameraHandler;
 
-    [SerializeField] InputActionMap actionMap;
+    [SerializeField] public InputActionMap actionMap;
     [SerializeField] Rigidbody2D rigidBody;
 
     private Animator animator;
@@ -156,6 +156,26 @@ public class PlayerMovement : MonoBehaviour
     void StopPlayer() {
         verticalMovment = 0;
         horizontalMovement = 0;
+    }
+
+    public void IsMovementPossible(bool isPossible)
+    {
+        PlayerInteraction pi = GetComponent<PlayerInteraction>();
+        if(isPossible)
+        {
+            actionMap.Enable();
+            if(pi != null)
+            {
+                pi.actionMap.Enable();
+            }
+        } else
+        {
+            actionMap.Disable();
+            if (pi != null)
+            {
+                pi.actionMap.Disable();
+            }
+        }
     }
 
 }

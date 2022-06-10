@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4565035719342722343}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: MultipleChairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,6 +91,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2068578282386151456, guid: bb958092207ba4947a2e9a3a64f47f6f, type: 3}
+      propertyPath: m_Layer
+      value: 19
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb958092207ba4947a2e9a3a64f47f6f, type: 3}
 --- !u!4 &693037008705064539 stripped
@@ -152,6 +156,10 @@ PrefabInstance:
     - target: {fileID: 2068578282386151456, guid: bb958092207ba4947a2e9a3a64f47f6f, type: 3}
       propertyPath: m_Name
       value: Chair (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2068578282386151456, guid: bb958092207ba4947a2e9a3a64f47f6f, type: 3}
+      propertyPath: m_Layer
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb958092207ba4947a2e9a3a64f47f6f, type: 3}
@@ -215,6 +223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2068578282386151456, guid: bb958092207ba4947a2e9a3a64f47f6f, type: 3}
+      propertyPath: m_Layer
+      value: 19
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb958092207ba4947a2e9a3a64f47f6f, type: 3}
 --- !u!4 &1292103294142727673 stripped
@@ -276,6 +288,10 @@ PrefabInstance:
     - target: {fileID: 2068578282386151456, guid: bb958092207ba4947a2e9a3a64f47f6f, type: 3}
       propertyPath: m_Name
       value: Chair (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2068578282386151456, guid: bb958092207ba4947a2e9a3a64f47f6f, type: 3}
+      propertyPath: m_Layer
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb958092207ba4947a2e9a3a64f47f6f, type: 3}
@@ -339,6 +355,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair
       objectReference: {fileID: 0}
+    - target: {fileID: 2068578282386151456, guid: bb958092207ba4947a2e9a3a64f47f6f, type: 3}
+      propertyPath: m_Layer
+      value: 19
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb958092207ba4947a2e9a3a64f47f6f, type: 3}
 --- !u!4 &4975842361100838490 stripped
@@ -400,6 +420,10 @@ PrefabInstance:
     - target: {fileID: 2068578282386151456, guid: bb958092207ba4947a2e9a3a64f47f6f, type: 3}
       propertyPath: m_Name
       value: Chair
+      objectReference: {fileID: 0}
+    - target: {fileID: 2068578282386151456, guid: bb958092207ba4947a2e9a3a64f47f6f, type: 3}
+      propertyPath: m_Layer
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb958092207ba4947a2e9a3a64f47f6f, type: 3}
