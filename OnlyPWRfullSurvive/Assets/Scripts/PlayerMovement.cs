@@ -63,28 +63,37 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void FixedUpdate() {
-        var joystickHorizontal = joystick.Horizontal;
-        var joystickVertical = joystick.Vertical;
+        if(joystick != null)
+        {
+            var joystickHorizontal = joystick.Horizontal;
+            var joystickVertical = joystick.Vertical;
+            if (joystickHorizontal < 0)
+            {
+                moveLeft = movmentSpeed * Math.Abs(joystickHorizontal);
+
+            }
+            else if (joystickHorizontal > 0)
+            {
+                moveRight = movmentSpeed * Math.Abs(joystickHorizontal);
+            }
+
+            if (joystickVertical < 0)
+            {
+                moveDown = movmentSpeed * Math.Abs(joystickVertical);
+
+            }
+            else if (joystickVertical > 0)
+            {
+                moveUp = movmentSpeed * Math.Abs(joystickVertical);
+            }
+        }
+        
         moveUp = movmentSpeed * actionMap["Up"].ReadValue<float>();
         moveDown = movmentSpeed * actionMap["Down"].ReadValue<float>();
         moveLeft = movmentSpeed * actionMap["Left"].ReadValue<float>();
         moveRight = movmentSpeed * actionMap["Right"].ReadValue<float>();
 
-        if(joystickHorizontal < 0) {
-            moveLeft = movmentSpeed * Math.Abs(joystickHorizontal);
-            
-        }
-        else if(joystickHorizontal > 0) {
-            moveRight = movmentSpeed * Math.Abs(joystickHorizontal);
-        }
-
-        if(joystickVertical < 0) {
-            moveDown = movmentSpeed * Math.Abs(joystickVertical);
-            
-        }
-        else if(joystickVertical > 0){
-            moveUp = movmentSpeed * Math.Abs(joystickVertical);
-        }
+        
 
         Vector2 targetVelocity = new Vector2(moveRight - moveLeft, moveUp - moveDown);
         rigidBody.velocity = Vector3.SmoothDamp(rigidBody.velocity, targetVelocity, ref velocity, movementSmoothing);

@@ -15,8 +15,20 @@ public class MusicController : MonoBehaviour
     [SerializeField] Toggle toggle;
     [SerializeField] List<AudioClip> audioClips;
 
-    private float lastSavedVolume;
-    private bool lastSavedMusicState;
+    private static float lastSavedVolume;
+    private static bool lastSavedMusicState;
+
+    public bool IsMusicOn { get
+        {
+            return lastSavedMusicState;
+        }
+    }
+
+    public float Volume { get
+        {
+            return lastSavedVolume;
+        }
+    }
 
 
     public static MusicController musicController;
@@ -27,6 +39,7 @@ public class MusicController : MonoBehaviour
         if (musicController == null)
         {
             DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(audioSource);
             musicController = this;
             slider.value = audioSource.volume;
         }
@@ -38,7 +51,7 @@ public class MusicController : MonoBehaviour
 
             musicController.toggle = this.toggle;
             musicController.toggle.onValueChanged.AddListener(musicController.OnCheckBoxChanged);
-            musicController.toggle.isOn = lastSavedMusicState;
+            musicController.toggle.isOn = musicController.lastSavedMusicState;
 
             Destroy(gameObject);
         }
@@ -49,7 +62,7 @@ public class MusicController : MonoBehaviour
         }
         lastSavedVolume = slider.value;
         lastSavedMusicState = toggle.isOn;
-        if (!audioSource.isPlaying)
+        if (!audioSource.isPlaying && lastSavedMusicState)
         {
             audioSource.clip = GetRandomAudioClip();
             audioSource.Play();
@@ -75,6 +88,7 @@ public class MusicController : MonoBehaviour
     {
         if (state)
         {
+            audioSource.clip = GetRandomAudioClip();
             audioSource.Play();
         }
         else

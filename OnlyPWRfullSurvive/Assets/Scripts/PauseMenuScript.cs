@@ -11,10 +11,16 @@ public class PauseMenuScript : MonoBehaviour
     public static bool isGamePaused = false;
     [SerializeField] InputActionMap actionMap;
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] Slider slider;
+    [SerializeField] Toggle toggle;
 
     void Start()
     {
         actionMap["Pause"].performed += ctx => TogglePauseMenu();
+        slider.minValue = 0;
+        slider.maxValue = 100;
+        toggle.isOn = MusicController.musicController.IsMusicOn;
+        slider.value = MusicController.musicController.Volume;
     }
 
     
@@ -62,6 +68,16 @@ public class PauseMenuScript : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1f;
+    }
+
+    public void OnSliderChanged(float value)
+    {
+        MusicController.musicController.OnSliderChange(value);
+    }
+
+    public void OnToggleChange(bool state)
+    {
+        MusicController.musicController.OnCheckBoxChanged(state);
     }
 
 
