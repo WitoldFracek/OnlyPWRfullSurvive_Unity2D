@@ -2273,6 +2273,7 @@ GameObject:
   - component: {fileID: 7475387315567720540}
   - component: {fileID: 7475387315567720867}
   - component: {fileID: 7475387315567720866}
+  - component: {fileID: 4380497312748150638}
   m_Layer: 9
   m_Name: Player2
   m_TagString: Player
@@ -2472,8 +2473,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e27e5c524e7a1419f13fcf269fb173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movmentSpeed: 10
-  movementSmoothing: 0.5
+  movmentSpeed: 7
+  movementSmoothing: 0.1
   otherPlayer: {fileID: 0}
   cameraHandler: {fileID: 0}
   actionMap:
@@ -2547,7 +2548,30 @@ MonoBehaviour:
       m_Action: Right
       m_Flags: 0
   rigidBody: {fileID: 7475387315567720542}
-  PlayerPickUpItem: {fileID: 0}
+  playerPickUpItem: {fileID: 0}
+  mobileUp: {fileID: 0}
+  mobileDown: {fileID: 0}
+  mobileLeft: {fileID: 0}
+  mobileRight: {fileID: 0}
+--- !u!95 &4380497312748150638
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7475387315567720865}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cfbaec3343ca6d54f9c521b6619575b2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7475387315652837012
 GameObject:
   m_ObjectHideFlags: 0
@@ -2985,6 +3009,7 @@ GameObject:
   - component: {fileID: 7475387315722731999}
   - component: {fileID: 7475387315722731998}
   - component: {fileID: 7475387315722731997}
+  - component: {fileID: 4840490733122811916}
   m_Layer: 9
   m_Name: Player1
   m_TagString: Player
@@ -3073,8 +3098,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e27e5c524e7a1419f13fcf269fb173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movmentSpeed: 10
-  movementSmoothing: 0.5
+  movmentSpeed: 7
+  movementSmoothing: 0.1
   otherPlayer: {fileID: 7475387315567720865}
   cameraHandler: {fileID: 7475387315258652032}
   actionMap:
@@ -3164,7 +3189,11 @@ MonoBehaviour:
       m_Action: OtherPlayer
       m_Flags: 0
   rigidBody: {fileID: 7475387315722731992}
-  PlayerPickUpItem: {fileID: 7475387315722731999}
+  playerPickUpItem: {fileID: 0}
+  mobileUp: {fileID: 0}
+  mobileDown: {fileID: 0}
+  mobileLeft: {fileID: 0}
+  mobileRight: {fileID: 0}
 --- !u!50 &7475387315722731992
 Rigidbody2D:
   serializedVersion: 4
@@ -3280,6 +3309,25 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Interact
       m_Flags: 0
+--- !u!95 &4840490733122811916
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7475387315722731996}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 24b638c69755190468d520d962c7b42c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7475387315860868786
 GameObject:
   m_ObjectHideFlags: 0

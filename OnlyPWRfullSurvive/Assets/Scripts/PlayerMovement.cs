@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] InputActionMap actionMap;
     [SerializeField] Rigidbody2D rigidBody;
 
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+
     private Vector3 velocity = Vector3.zero;
     private float verticalMovment = 0f;
     private float horizontalMovement = 0f;
@@ -24,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private float moveDown = 0f;
     private float moveUp = 0f;
 
-    private bool isOtherPlayerInGame = false;
+    private static bool isOtherPlayerInGame;
 
     [SerializeField]
     private PlayerPickUpItem playerPickUpItem;
@@ -36,6 +39,17 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         SetupMovementKeys();
+        animator = gameObject.GetComponent<Animator>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        if(otherPlayer != null)
+        {
+            if (isOtherPlayerInGame)
+            {
+                isOtherPlayerInGame = false;
+                ToggleOtherPlayer();
+            }
+            isOtherPlayerInGame = otherPlayer.activeSelf;
+        }
     }
 
     
@@ -51,6 +65,14 @@ public class PlayerMovement : MonoBehaviour
         moveRight = movmentSpeed * actionMap["Right"].ReadValue<float>();
         Vector2 targetVelocity = new Vector2(moveRight - moveLeft, moveUp - moveDown);
         rigidBody.velocity = Vector3.SmoothDamp(rigidBody.velocity, targetVelocity, ref velocity, movementSmoothing);
+        animator.SetFloat("Player speed", Mathf.Sqrt((moveRight - moveLeft) * (moveRight - moveLeft) + (moveUp - moveDown) * (moveUp - moveDown)));
+        if(moveLeft > moveRight)
+        {
+            spriteRenderer.flipX = true;
+        } else if(moveRight > moveLeft)
+        {
+            spriteRenderer.flipX = false;
+        }
         // if (Input.touchCount > 0) {
         //     Vector2 touch = Input.GetTouch(0).position;
         //     touch.x -= Screen.width/2;
