@@ -108,10 +108,14 @@ public static class MissionHandler {
     public static List<Mission> GetAllMissions()
     {
         List<Mission> allMissions = new List<Mission>();
-        allMissions.AddRange(allOnTimeMissions);
-        allMissions.AddRange(allCollectMissions);
-        allMissions.AddRange(allTimeRestrictedMissions);
-        allMissions.AddRange(allExevutableMissions);
+        if(allOnTimeMissions != null)
+            allMissions.AddRange(allOnTimeMissions);
+        if (allCollectMissions != null)
+            allMissions.AddRange(allCollectMissions);
+        if (allTimeRestrictedMissions != null)
+            allMissions.AddRange(allTimeRestrictedMissions);
+        if (allExevutableMissions != null)
+            allMissions.AddRange(allExevutableMissions);
         return allMissions;
     }
 

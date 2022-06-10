@@ -8,7 +8,7 @@ using System;
 public class PlayerMovement : MonoBehaviour
 {
     // Params
-    public float movmentSpeed = 4000f;
+    public float movmentSpeed = 7f;
     [Range(0, 0.5f)][SerializeField] public float movementSmoothing = 0.01f;
     [SerializeField] GameObject otherPlayer;
     [SerializeField] CameraFollowingHandler cameraHandler;

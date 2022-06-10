@@ -8,4 +8,5 @@ public static class Constants
     public static int maxEnergyLevel = 60*60*1;
     public static int maxEcts = 30;
     public static int minToPassEcts = 26;
+    public static int maxHealthLevel = 100;
 }
