@@ -51,7 +51,7 @@ public class MusicController : MonoBehaviour
 
             musicController.toggle = this.toggle;
             musicController.toggle.onValueChanged.AddListener(musicController.OnCheckBoxChanged);
-            musicController.toggle.isOn = musicController.lastSavedMusicState;
+            musicController.toggle.isOn = MusicController.lastSavedMusicState;
 
             Destroy(gameObject);
         }
