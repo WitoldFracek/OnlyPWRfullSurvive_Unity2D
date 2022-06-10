@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -32,8 +33,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private PlayerPickUpItem playerPickUpItem;
 
+    // [SerializeField]
+    // private Button mobileUp, mobileDown, mobileLeft, mobileRight;
+
     [SerializeField]
-    private Button mobileUp, mobileDown, mobileLeft, mobileRight;
+    private Joystick joystick;
 
     
     void Start()
@@ -59,10 +63,29 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void FixedUpdate() {
+        var joystickHorizontal = joystick.Horizontal;
+        var joystickVertical = joystick.Vertical;
         moveUp = movmentSpeed * actionMap["Up"].ReadValue<float>();
         moveDown = movmentSpeed * actionMap["Down"].ReadValue<float>();
         moveLeft = movmentSpeed * actionMap["Left"].ReadValue<float>();
         moveRight = movmentSpeed * actionMap["Right"].ReadValue<float>();
+
+        if(joystickHorizontal < 0) {
+            moveLeft = movmentSpeed * Math.Abs(joystickHorizontal);
+            
+        }
+        else if(joystickHorizontal > 0) {
+            moveRight = movmentSpeed * Math.Abs(joystickHorizontal);
+        }
+
+        if(joystickVertical < 0) {
+            moveDown = movmentSpeed * Math.Abs(joystickVertical);
+            
+        }
+        else if(joystickVertical > 0){
+            moveUp = movmentSpeed * Math.Abs(joystickVertical);
+        }
+
         Vector2 targetVelocity = new Vector2(moveRight - moveLeft, moveUp - moveDown);
         rigidBody.velocity = Vector3.SmoothDamp(rigidBody.velocity, targetVelocity, ref velocity, movementSmoothing);
         animator.SetFloat("Player speed", Mathf.Sqrt((moveRight - moveLeft) * (moveRight - moveLeft) + (moveUp - moveDown) * (moveUp - moveDown)));
@@ -84,21 +107,21 @@ public class PlayerMovement : MonoBehaviour
         // }
     }
 
-    public void addForceRight() {
-        rigidBody.AddForce(new Vector2(1, 0) * 300);
-    }
+    // public void addForceRight() {
+    //     rigidBody.AddForce(new Vector2(1, 0) * 300);
+    // }
 
-    public void addForceLeft() {
-        rigidBody.AddForce(new Vector2(-1, 0) * 300);
-    }
+    // public void addForceLeft() {
+    //     rigidBody.AddForce(new Vector2(-1, 0) * 300);
+    // }
 
-    public void addForceUp() {
-        rigidBody.AddForce(new Vector2(0, 1) * 300);
-    }
+    // public void addForceUp() {
+    //     rigidBody.AddForce(new Vector2(0, 1) * 300);
+    // }
 
-    public void addForceDown() {
-        rigidBody.AddForce(new Vector2(0, -1) * 300);
-    }
+    // public void addForceDown() {
+    //     rigidBody.AddForce(new Vector2(0, -1) * 300);
+    // }
 
     private void OnEnable() {
         actionMap.Enable();
