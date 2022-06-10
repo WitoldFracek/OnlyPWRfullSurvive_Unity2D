@@ -33,6 +33,7 @@ public class HUDController : MonoBehaviour
     [SerializeField] InputField consoleInput;
     [SerializeField] Text consoleResult;
     [SerializeField] List<GameObject> laptopIcons;
+    [SerializeField] AudioClip laptopSound;
 
     //data passing
     private List<string> standingNpcMessages = null;
@@ -120,6 +121,7 @@ public class HUDController : MonoBehaviour
 
     public void SetLaptopActive(bool isActive)
     {
+        AudioSource.PlayClipAtPoint(laptopSound, transform.position);
         player1.GetComponent<PlayerMovement>().IsMovementPossible(!isActive);
         player2.GetComponent<PlayerMovement>().IsMovementPossible(!isActive);
         laptop.SetActive(isActive);

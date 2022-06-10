@@ -9,6 +9,7 @@ public class CollectableHandler : MonoBehaviour, InteractAction
     [SerializeField] public string id;
     [SerializeField] public int level;
     [SerializeField] GameObject textHint;
+    [SerializeField] AudioClip collectSound;
 
     private void Start()
     {
@@ -44,6 +45,7 @@ public class CollectableHandler : MonoBehaviour, InteractAction
     public void Interact()
     {
         MissionHandler.PassCollectable(this);
+        AudioSource.PlayClipAtPoint(collectSound, transform.position);
         Destroy(gameObject);
     }
 }

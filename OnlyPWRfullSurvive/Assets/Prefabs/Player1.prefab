@@ -3632,6 +3632,7 @@ MonoBehaviour:
   - {fileID: 7475387315860868786}
   - {fileID: 7475387315652837012}
   - {fileID: 7475387315510755650}
+  laptopSound: {fileID: 8300000, guid: 6910be958e08cf644b12d77bdf236eb7, type: 3}
 --- !u!1 &7475387315132881824
 GameObject:
   m_ObjectHideFlags: 0
@@ -4255,6 +4256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   executableMissionInx: -1
+  clickIconSound: {fileID: 8300000, guid: 5135fea8782890c44bfe417cb0cbcf1b, type: 3}
 --- !u!1 &7475387315541222353
 GameObject:
   m_ObjectHideFlags: 0
@@ -4870,6 +4872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   executableMissionInx: -1
+  clickIconSound: {fileID: 8300000, guid: 5135fea8782890c44bfe417cb0cbcf1b, type: 3}
 --- !u!1 &7475387315663039471
 GameObject:
   m_ObjectHideFlags: 0
@@ -5626,6 +5629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   executableMissionInx: -1
+  clickIconSound: {fileID: 8300000, guid: 5135fea8782890c44bfe417cb0cbcf1b, type: 3}
 --- !u!1 &7475387315885292233
 GameObject:
   m_ObjectHideFlags: 0
@@ -7132,6 +7136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   executableMissionInx: 0
+  clickIconSound: {fileID: 0}
 --- !u!1 &7743241804725563055
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenuScript : MonoBehaviour
 {
@@ -34,13 +35,12 @@ public class PauseMenuScript : MonoBehaviour
 
     private void TogglePauseMenu()
     {
-        isGamePaused = !isGamePaused;
         if (isGamePaused)
         {
-            PauseGame();
+            ResumeGame();
         } else
         {
-            ResumeGame();
+            PauseGame();
         }
     }
 
@@ -48,12 +48,14 @@ public class PauseMenuScript : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
+        isGamePaused = true;
     }
 
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
+        isGamePaused = false;
     }
 
     public void QuitLevel()

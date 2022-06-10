@@ -7,6 +7,8 @@ public class HUDIconBehaviour : MonoBehaviour
 {
     [SerializeField]
     public int executableMissionInx = -1;
+    [SerializeField] AudioClip clickIconSound;
+
     private ExecutableMission mission;
     // Start is called before the first frame update
     void Start()
@@ -40,7 +42,9 @@ public class HUDIconBehaviour : MonoBehaviour
 
     public void onClick() {
         MissionHandler.ExecuteExecutableMission(executableMissionInx);
-        if(mission.WasFinalised) {
+        AudioSource.PlayClipAtPoint(clickIconSound, transform.root.position);
+        if (mission.WasFinalised)
+        {
             makeInvisibleVisible();
         }
     }

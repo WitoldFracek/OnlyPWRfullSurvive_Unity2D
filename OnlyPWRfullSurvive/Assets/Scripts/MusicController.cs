@@ -18,6 +18,7 @@ public class MusicController : MonoBehaviour
     private float lastSavedVolume;
     private bool lastSavedMusicState;
 
+
     public static MusicController musicController;
 
 
@@ -33,11 +34,11 @@ public class MusicController : MonoBehaviour
         {
             musicController.slider = this.slider;
             musicController.slider.onValueChanged.AddListener(musicController.OnSliderChange);
-            musicController.slider.value = musicController.lastSavedVolume;
+            musicController.slider.value = lastSavedVolume;
 
             musicController.toggle = this.toggle;
             musicController.toggle.onValueChanged.AddListener(musicController.OnCheckBoxChanged);
-            musicController.toggle.isOn = musicController.lastSavedMusicState;
+            musicController.toggle.isOn = lastSavedMusicState;
 
             Destroy(gameObject);
         }
@@ -57,7 +58,7 @@ public class MusicController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!audioSource.isPlaying)
+        if (!audioSource.isPlaying && lastSavedMusicState)
         {
             audioSource.clip = GetRandomAudioClip();
             audioSource.Play();
