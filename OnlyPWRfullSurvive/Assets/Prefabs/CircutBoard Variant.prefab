@@ -55,6 +55,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CircutBoard Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4823109102375869346, guid: 7db40bd15790cb448b4f95b0156fe60e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7432518367631836024, guid: 7db40bd15790cb448b4f95b0156fe60e, type: 3}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7432518367631836024, guid: 7db40bd15790cb448b4f95b0156fe60e, type: 3}
       propertyPath: collectableTag
       value: CIRCUT_BOARD

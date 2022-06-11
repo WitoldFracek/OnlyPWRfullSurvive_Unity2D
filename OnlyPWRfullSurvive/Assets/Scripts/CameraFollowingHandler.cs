@@ -11,13 +11,14 @@ public class CameraFollowingHandler : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if(otherTarget == null) {
-            transform.position = mainTarget.position + offset;
-        }
-        else
-        {
-            transform.position = (mainTarget.position + otherTarget.position) / 2 + offset;
-        }
+        transform.position = mainTarget.position + offset;
+        //if (otherTarget == null) {
+        //    transform.position = mainTarget.position + offset;
+        //}
+        //else
+        //{
+        //    transform.position = (mainTarget.position + otherTarget.position) / 2 + offset;
+        //}
         
     }
 
