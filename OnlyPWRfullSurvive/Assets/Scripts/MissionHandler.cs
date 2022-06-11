@@ -70,18 +70,18 @@ public static class MissionHandler {
         allExevutableMissions = new List<ExecutableMission>();
         allTimeRestrictedMissions = new List<TimeRestrictedMission>();
 
-        // allOnTimeMissions.Add(new OnTimeMission(1, "104", 10f) { Description = " Cyberki"});
-        // allOnTimeMissions.Add(new OnTimeMission(2, "104", 20f) { Description = "L Android"});
-        // allOnTimeMissions.Add(new OnTimeMission(1, "104", 10f) { Description = "W Cyberki"});
-        // allOnTimeMissions.Add(new OnTimeMission(2, "104", 20f) { Description = "L Android"});
+        allOnTimeMissions.Add(new OnTimeMission(1, "105", "A1", 60f) { Description = "Lecture Microsoft admin"});
+        allOnTimeMissions.Add(new OnTimeMission(2, "103", "C13", 60f*2f) { Description = "Laboratory Android"});
+        allOnTimeMissions.Add(new OnTimeMission(1, "103", "A1", 60f*3f) { Description = "Lecture Data warehouse"});
+        allOnTimeMissions.Add(new OnTimeMission(2, "102", "C13", 60f*4f) { Description = "Laboratory .NET"});
 
-        // allCollectMissions.Add(new CollectMission(5, 5, "CD") { Description = "Collect CDs"});
+        allCollectMissions.Add(new CollectMission(5, 5, "CIRCUT_BOARD") { Description = "Collect Circut boards"});
 
-        // allExevutableMissions.Add(new ExecutableMission(1, 160f) { Description = "Code checkers MIN-MAX"});
-        // allExevutableMissions.Add(new ExecutableMission(2, 90f) { Description = "Report "});
-        // allExevutableMissions.Add(new ExecutableMission(2, 190f) { Description = "Website .NET"});
+        allExevutableMissions.Add(new ExecutableMission(1, 160f) { Description = "Code checkers MIN-MAX"});
+        allExevutableMissions.Add(new ExecutableMission(2, 90f) { Description = "Report "});
+        allExevutableMissions.Add(new ExecutableMission(2, 190f) { Description = "Website .NET"});
 
-        // allTimeRestrictedMissions.Add(new TimeRestrictedMission(1, "103", "Dean", 30f) { Description = "Internship paperwork"});
+        allTimeRestrictedMissions.Add(new TimeRestrictedMission(6, "103", "Dean", 60f * 2.5f) { Description = "Internship paperwork"});
     }
 
     public static void executeMissionForRoomNumber(string roomNumber, string buildingName) {
