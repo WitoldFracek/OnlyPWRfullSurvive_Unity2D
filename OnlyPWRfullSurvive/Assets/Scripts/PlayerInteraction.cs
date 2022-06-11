@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerInteraction : MonoBehaviour {
 
     [SerializeField] public InputActionMap actionMap;
+    private Animator animator;
     private InteractAction interactable;
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -22,10 +23,15 @@ public class PlayerInteraction : MonoBehaviour {
 
     private void Start() {
         actionMap["Interact"].performed += ctx => Interact();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     public void Interact() {
         if(interactable != null) {
+            if (interactable.IsAnimated())
+            {
+                animator.SetTrigger("PickupTrigger");
+            }
             interactable.Interact();
         }
     }

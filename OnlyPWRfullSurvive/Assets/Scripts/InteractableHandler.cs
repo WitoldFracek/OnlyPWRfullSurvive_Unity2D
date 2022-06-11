@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public interface InteractAction {
     void Interact();
+    bool IsAnimated();
 }
 
 public class InteractableHandler: MonoBehaviour, InteractAction
@@ -36,5 +37,10 @@ public class InteractableHandler: MonoBehaviour, InteractAction
 
     public virtual void Interact(){
         Debug.Log("Method E not implemented");
+    }
+
+    public virtual bool IsAnimated()
+    {
+        return false;
     }
 }

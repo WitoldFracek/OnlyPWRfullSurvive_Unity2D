@@ -30,4 +30,9 @@ public class StandingNPCScript : MonoBehaviour, InteractAction
             interactionText.SetActive(false);
         }
     }
+
+    public bool IsAnimated()
+    {
+        return false;
+    }
 }

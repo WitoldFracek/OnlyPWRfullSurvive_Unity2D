@@ -48,4 +48,9 @@ public class CollectableHandler : MonoBehaviour, InteractAction
         AudioSource.PlayClipAtPoint(collectSound, transform.position);
         Destroy(gameObject);
     }
+
+    public bool IsAnimated()
+    {
+        return true;
+    }
 }

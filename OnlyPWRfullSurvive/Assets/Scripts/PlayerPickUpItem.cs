@@ -8,11 +8,13 @@ public class PlayerPickUpItem : MonoBehaviour {
     [SerializeField] InputActionMap actionMap;
 
     private GameObject collectable = null;
+    private Animator animator;
 
     private int tempCount = 0;
     
     void Start() {
         SetupKeys();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -33,6 +35,7 @@ public class PlayerPickUpItem : MonoBehaviour {
 
     public void CollectItem() {
         if(collectable != null) {
+            animator.SetTrigger("PickupTrigger");
             Destroy(collectable);
             collectable = null;
             tempCount += 1;
