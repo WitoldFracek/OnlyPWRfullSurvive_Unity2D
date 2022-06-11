@@ -7,6 +7,8 @@ public class DoorRangeBehavior : PlayerOver
     [SerializeField]
     private string doorNumber;
     [SerializeField]
+    private string buildingName;
+    [SerializeField]
     private TextMesh text;
 
     private void Start() {
@@ -14,7 +16,8 @@ public class DoorRangeBehavior : PlayerOver
     }
 
     override protected void whenInRange() {
-        MissionHandler.executeMissionForRoomNumber(doorNumber);
+        //Debug.Log($"{doorNumber} {buildingName}");
+        MissionHandler.executeMissionForRoomNumber(doorNumber, buildingName);
         // Debug.Log(timeToEnter + " " + TimeTracker.timeTracker + " " + (timeToEnter + maxHowLateSec));
         // if(timeToEnter <= TimeTracker.timeTracker && TimeTracker.timeTracker <= timeToEnter + maxHowLateSec) {
         //     gameObject.GetComponent<SpriteRenderer>().color = Color.green;

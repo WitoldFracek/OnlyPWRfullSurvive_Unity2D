@@ -179,6 +179,9 @@ public class HUDController : MonoBehaviour
     void Update()
     {
         timeDisplay.text = TimeTracker.GetCurrentTimePretty();
+        if(TimeTracker.getTimeLeft() < 60f) {
+            timeDisplay.color = Color.red;
+        }
         SetECTS(MissionHandler.GetCurrentECTSCount());
         missionDisplay.text = getMissionsPretty(MissionHandler.getAllMissions());
         finalissedMissionDisplay.text = getMissionsPretty(MissionHandler.getAllMissions(false));

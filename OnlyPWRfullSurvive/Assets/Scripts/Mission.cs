@@ -43,15 +43,17 @@ public class Mission {
 
 public class RoomRelatedMission : Mission {
     public string roomNumber {get; private set;}
+    public string buildingName {get; private set;}
 
-    public RoomRelatedMission(int ectss, string roomNumber) : base(ectss) {
+    public RoomRelatedMission(int ectss, string roomNumber, string buildingName) : base(ectss) {
         this.roomNumber = roomNumber;
+        this.buildingName = buildingName;
     }
 }
 
 public class TimeRestrictedMission : RoomRelatedMission {
     private float maxTimeToFinish;
-    public TimeRestrictedMission(int ectss, string roomNumber, float maxTimeToFinish) : base(ectss, roomNumber) {
+    public TimeRestrictedMission(int ectss, string roomNumber, string buildingName, float maxTimeToFinish) : base(ectss, roomNumber, buildingName) {
         this.maxTimeToFinish = maxTimeToFinish;
     }
 
@@ -62,14 +64,14 @@ public class TimeRestrictedMission : RoomRelatedMission {
     public override string ToString()
     {
         return base.ToString() + " MAX " + TimeTracker.GetTimePretty(maxTimeToFinish) 
-        + " - " + roomNumber;
+        + " - " + buildingName + " " + roomNumber;
     }
 }
 
 public class OnTimeMission : RoomRelatedMission {
     private float timeToDoMission;
     private static float maxHowLateSec = 5f;
-    public OnTimeMission(int ectss, string roomNumber, float maxTimeToFinish) : base(ectss, roomNumber) {
+    public OnTimeMission(int ectss, string roomNumber, string buildingName, float maxTimeToFinish) : base(ectss, roomNumber, buildingName) {
         this.timeToDoMission = maxTimeToFinish;
     }
 
@@ -86,7 +88,7 @@ public class OnTimeMission : RoomRelatedMission {
     public override string ToString()
     {
         return base.ToString() + " ON  " + TimeTracker.GetTimePretty(timeToDoMission) 
-        + " - " + roomNumber;
+        + " - " + buildingName + " " + roomNumber;
     }
 }
 

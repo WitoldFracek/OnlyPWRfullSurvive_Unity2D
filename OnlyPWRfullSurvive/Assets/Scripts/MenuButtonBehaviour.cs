@@ -24,6 +24,7 @@ public class MenuButtonBehaviour : MonoBehaviour, IPointerEnterHandler, IPointer
         BetweenScenesParams.currentLevel = 1;
         BetweenScenesParams.currentEnergyLevel = Constants.maxEnergyLevel;
         TimeTracker.timeTracker = 0f;
+        BetweenScenesParams.teleportPointId = "";
         MissionHandler.setLevel1Missions();
         startGame();
     }
@@ -32,6 +33,7 @@ public class MenuButtonBehaviour : MonoBehaviour, IPointerEnterHandler, IPointer
         BetweenScenesParams.currentLevel = 2;
         BetweenScenesParams.currentEnergyLevel = Constants.maxEnergyLevel/2;
         TimeTracker.timeTracker = 0f;
+        BetweenScenesParams.teleportPointId = "";
         MissionHandler.setLevel2Missions();
         startGame();
     }
@@ -40,6 +42,7 @@ public class MenuButtonBehaviour : MonoBehaviour, IPointerEnterHandler, IPointer
         BetweenScenesParams.currentLevel = 3;
         BetweenScenesParams.currentEnergyLevel = Constants.maxEnergyLevel/3;
         TimeTracker.timeTracker = 0f;
+        BetweenScenesParams.teleportPointId = "";
         MissionHandler.setLevel3Missions();
         startGame();
     }

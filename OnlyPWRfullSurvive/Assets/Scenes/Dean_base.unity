@@ -186,6 +186,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2169827860741087713, guid: dd59bfa754e5d17489c741d3e3e48f71, type: 3}
+      propertyPath: doorNumber
+      value: 102
+      objectReference: {fileID: 0}
+    - target: {fileID: 2169827860741087713, guid: dd59bfa754e5d17489c741d3e3e48f71, type: 3}
+      propertyPath: buildingName
+      value: Dean
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd59bfa754e5d17489c741d3e3e48f71, type: 3}
 --- !u!4 &433045537 stripped
@@ -10432,6 +10440,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2169827860741087713, guid: dd59bfa754e5d17489c741d3e3e48f71, type: 3}
+      propertyPath: doorNumber
+      value: 103
+      objectReference: {fileID: 0}
+    - target: {fileID: 2169827860741087713, guid: dd59bfa754e5d17489c741d3e3e48f71, type: 3}
+      propertyPath: buildingName
+      value: Dean
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd59bfa754e5d17489c741d3e3e48f71, type: 3}
 --- !u!4 &1533700221 stripped
@@ -10532,6 +10548,14 @@ PrefabInstance:
     - target: {fileID: 2169827860741087712, guid: dd59bfa754e5d17489c741d3e3e48f71, type: 3}
       propertyPath: m_Name
       value: Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 2169827860741087713, guid: dd59bfa754e5d17489c741d3e3e48f71, type: 3}
+      propertyPath: doorNumber
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 2169827860741087713, guid: dd59bfa754e5d17489c741d3e3e48f71, type: 3}
+      propertyPath: buildingName
+      value: Dean
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd59bfa754e5d17489c741d3e3e48f71, type: 3}

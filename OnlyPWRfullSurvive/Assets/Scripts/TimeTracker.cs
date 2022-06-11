@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TimeTracker : MonoBehaviour
 {
     public static float timeTracker = 0f;
-    public static float maxTime = 720f;
+    public static float maxTime = 60f * 5f;
     // public static float maxTime = 60f;
     public static float startTime = 8*60f;
     void FixedUpdate()
@@ -20,6 +20,10 @@ public class TimeTracker : MonoBehaviour
 
     protected virtual void OnTimerFinished() {
         Debug.Log("Time finished!");
+    }
+
+    public static float getTimeLeft() {
+        return maxTime - timeTracker;
     }
 
     public static string GetTimePretty(float time)
