@@ -219,5 +219,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textHint: {fileID: 6188985682566690457}
-  maxEnergyPercent: 0.1
+  maxEnergyPercent: 0.2
   energyBoosterSound: {fileID: 8300000, guid: 456c6535dd7e5c6448832b5810c02b12, type: 3}

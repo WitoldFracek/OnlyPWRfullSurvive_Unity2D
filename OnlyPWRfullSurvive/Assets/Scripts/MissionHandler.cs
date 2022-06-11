@@ -53,13 +53,13 @@ public static class MissionHandler {
         allExevutableMissions = new List<ExecutableMission>();
         allTimeRestrictedMissions = new List<TimeRestrictedMission>();
 
-        allOnTimeMissions.Add(new OnTimeMission(5, "102", "A1", 60f*2f) { Description = "Lecture Microsoft administration"});
-        allOnTimeMissions.Add(new OnTimeMission(5, "103", "C13", 60f*3f) { Description = "Laboratory Android"});
+        allOnTimeMissions.Add(new OnTimeMission(5, "104", "A1", 60f*1f) { Description = "Lecture Microsoft admin"});
+        allOnTimeMissions.Add(new OnTimeMission(5, "104", "C13", 60f*4f) { Description = "Laboratory Android"});
 
         allCollectMissions.Add(new CollectMission(5, 5, "PENDRIVE") { Description = "Collect pendrives"});
 
-        allExevutableMissions.Add(new ExecutableMission(5, 60f) { Description = "Report Cybersecurity"});
-        allExevutableMissions.Add(new ExecutableMission(5, 90f) { Description = "App Android"});
+        allExevutableMissions.Add(new ExecutableMission(5, 30f) { Description = "Report Cybersecurity"});
+        allExevutableMissions.Add(new ExecutableMission(5, 60f) { Description = "App Android"});
 
         allTimeRestrictedMissions.Add(new TimeRestrictedMission(5, "101", "Dean", 60f * 4f) { Description = "Sticker student ID"});
     }
@@ -110,10 +110,10 @@ public static class MissionHandler {
         List<Mission> allMissions = new List<Mission>();
         if(allOnTimeMissions != null)
             allMissions.AddRange(allOnTimeMissions);
-        if (allCollectMissions != null)
-            allMissions.AddRange(allCollectMissions);
         if (allTimeRestrictedMissions != null)
             allMissions.AddRange(allTimeRestrictedMissions);
+        if (allCollectMissions != null)
+            allMissions.AddRange(allCollectMissions);
         if (allExevutableMissions != null)
             allMissions.AddRange(allExevutableMissions);
         return allMissions;

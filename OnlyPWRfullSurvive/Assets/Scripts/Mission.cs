@@ -2,7 +2,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 public class Mission {
-    private static int maxNameLength = 20;
+    private static int maxNameLength = 25;
     public bool WasFinalised { get; protected set;}
     public int ectss {get; private set;}
     public string Description { get; set; }
@@ -72,7 +72,7 @@ public class OnTimeMission : RoomRelatedMission {
     private float timeToDoMission;
     private static float maxHowLateSec = 5f;
     public OnTimeMission(int ectss, string roomNumber, string buildingName, float maxTimeToFinish) : base(ectss, roomNumber, buildingName) {
-        this.timeToDoMission = maxTimeToFinish;
+        this.timeToDoMission = maxTimeToFinish + 15f;
     }
 
     override public bool canBeFinalised() {

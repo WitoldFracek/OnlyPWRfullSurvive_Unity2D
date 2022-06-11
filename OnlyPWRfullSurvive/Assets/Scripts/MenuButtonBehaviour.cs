@@ -31,7 +31,7 @@ public class MenuButtonBehaviour : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void startLevel2() {
         BetweenScenesParams.currentLevel = 2;
-        BetweenScenesParams.currentEnergyLevel = Constants.maxEnergyLevel/2;
+        BetweenScenesParams.currentEnergyLevel = Constants.maxEnergyLevel*3/4;
         TimeTracker.timeTracker = 0f;
         BetweenScenesParams.teleportPointId = "";
         MissionHandler.setLevel2Missions();

@@ -64,10 +64,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7432518367631836024, guid: 7db40bd15790cb448b4f95b0156fe60e, type: 3}
-      propertyPath: collectSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 5b957c4fdedfa184b860a5dfa2038657, type: 3}
-    - target: {fileID: 7432518367631836024, guid: 7db40bd15790cb448b4f95b0156fe60e, type: 3}
       propertyPath: collectableTag
       value: CD
       objectReference: {fileID: 0}

@@ -127,7 +127,7 @@ MonoBehaviour:
   id: 
   level: 0
   textHint: {fileID: 5605396767450878569}
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: 5b957c4fdedfa184b860a5dfa2038657, type: 3}
 --- !u!1 &5605396767450878569
 GameObject:
   m_ObjectHideFlags: 0
