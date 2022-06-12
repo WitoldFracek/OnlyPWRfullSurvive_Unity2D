@@ -50,4 +50,19 @@ public class MenuButtonBehaviour : MonoBehaviour, IPointerEnterHandler, IPointer
     private void startGame() {
         SceneManager.LoadScene("BetweenBuildings");
     }
+
+    public void StartCutscene1()
+    {
+        SceneManager.LoadScene("CutScene1");
+    }
+
+    public void StartCutscene2()
+    {
+        SceneManager.LoadScene("CutScene2");
+    }
+
+    public void StartCutscene3()
+    {
+        SceneManager.LoadScene("CutScene3");
+    }
 }

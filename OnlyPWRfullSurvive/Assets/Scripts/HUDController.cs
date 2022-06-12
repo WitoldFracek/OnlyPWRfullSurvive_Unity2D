@@ -5,11 +5,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class HUDController : MonoBehaviour
 {
     [SerializeField] public GameObject player1;
     [SerializeField] public GameObject player2;
+    [SerializeField] InputActionMap actionMap;
+    [SerializeField] GameObject hudCanvas;
 
     //Dialog
     [SerializeField] GameObject dialogBox;
@@ -41,6 +44,8 @@ public class HUDController : MonoBehaviour
     private List<string> standingNpcMessages = null;
     private int dialogIndex = 0;
     private Sprite standingNpcSprite = null;
+
+    private bool isVisible = true;
 
     // public void SetTime(float time)
     // {
@@ -123,6 +128,12 @@ public class HUDController : MonoBehaviour
         }
         consoleResult.text = resultText;
         consoleInput.text = "";
+    }
+
+    private void SwitchHUD()
+    {
+        isVisible = !isVisible;
+        hudCanvas.SetActive(isVisible);
     }
 
     public void SetDialogBoxActive(bool isActive)
@@ -238,7 +249,20 @@ public class HUDController : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        actionMap.Enable();
+    }
 
+    private void OnDisable()
+    {
+        actionMap.Disable();
+    }
+
+    private void Awake()
+    {
+        actionMap["Toggle"].performed += ctx => SwitchHUD();
+    }
 
 
 

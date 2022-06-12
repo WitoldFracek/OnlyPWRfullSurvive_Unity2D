@@ -337,20 +337,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634574294111640751}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6577631732104245120}
   - {fileID: 2455334001192572450}
-  m_Father: {fileID: 7475387315107919243}
-  m_RootOrder: 2
+  m_Father: {fileID: 7475387314563700232}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 400, y: 224.91583}
+  m_SizeDelta: {x: 800, y: 449.83167}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4922852374336285479
 Canvas:
   m_ObjectHideFlags: 0
@@ -1494,6 +1494,7 @@ RectTransform:
   - {fileID: 7475387316245778429}
   - {fileID: 7475387316194975873}
   - {fileID: 7261389080292239600}
+  - {fileID: 8516686343895238631}
   m_Father: {fileID: 7475387315107919243}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2863,7 +2864,6 @@ Transform:
   m_Children:
   - {fileID: 7475387314563700232}
   - {fileID: 7475387314812147076}
-  - {fileID: 8516686343895238631}
   m_Father: {fileID: 7475387315722731995}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2924,6 +2924,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 7475387315722731996}
   player2: {fileID: 7475387315567720865}
+  actionMap:
+    m_Name: Action Map
+    m_Id: 7f32d9c5-1ccb-46e9-a997-4a0128c0c103
+    m_Asset: {fileID: 0}
+    m_Actions:
+    - m_Name: Toggle
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 177e784d-58cd-4657-9831-622e463e8017
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Bindings:
+    - m_Name: 
+      m_Id: ea9c615d-36b1-4551-8730-1802325c62b7
+      m_Path: <Keyboard>/f1
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Toggle
+      m_Flags: 0
+  hudCanvas: {fileID: 7475387314563700239}
   dialogBox: {fileID: 7475387316520815719}
   npcImage: {fileID: 7475387314847942770}
   dialogText: {fileID: 7475387314808153497}
@@ -7050,6 +7073,26 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 7475387315567720865}
+    - target: {fileID: 6921021640640782013, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}
+      propertyPath: actionMap.m_Actions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921021640640782013, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}
+      propertyPath: actionMap.m_Bindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921021640640782013, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}
+      propertyPath: actionMap.m_Actions.Array.data[0].m_Name
+      value: Toggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921021640640782013, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}
+      propertyPath: actionMap.m_Bindings.Array.data[0].m_Path
+      value: <Keyboard>/f1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921021640640782013, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}
+      propertyPath: actionMap.m_Bindings.Array.data[0].m_Action
+      value: Toggle
+      objectReference: {fileID: 0}
     - target: {fileID: 7233003985483057681, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}
       propertyPath: m_Name
       value: HUD

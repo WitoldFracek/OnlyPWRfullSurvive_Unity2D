@@ -13,6 +13,8 @@ public class DoorRangeBehavior : PlayerOver
 
     [SerializeField] AudioClip successClip;
 
+    private bool soundPlayed = false;
+
     private void Start() {
         text.text = doorNumber;
     }
@@ -21,7 +23,11 @@ public class DoorRangeBehavior : PlayerOver
         //Debug.Log($"{doorNumber} {buildingName}");
         if (MissionHandler.executeMissionForRoomNumber(doorNumber, buildingName))
         {
-            AudioSource.PlayClipAtPoint(successClip, transform.position);
+            if (!soundPlayed)
+            {
+                soundPlayed = true;
+                AudioSource.PlayClipAtPoint(successClip, transform.position);
+            }
         }
         // Debug.Log(timeToEnter + " " + TimeTracker.timeTracker + " " + (timeToEnter + maxHowLateSec));
         // if(timeToEnter <= TimeTracker.timeTracker && TimeTracker.timeTracker <= timeToEnter + maxHowLateSec) {
