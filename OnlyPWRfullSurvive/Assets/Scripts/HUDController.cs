@@ -4,6 +4,7 @@ using System.Net;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class HUDController : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class HUDController : MonoBehaviour
     [SerializeField] Text timeDisplay;
     [SerializeField] Text ectsDisplay;
     [SerializeField] Text missionDisplay;
-    [SerializeField] Text finalissedMissionDisplay;
+    [SerializeField] AudioClip missionFailedClip;
+    //[SerializeField] Text finalissedMissionDisplay;
 
     // HealthBars
     [SerializeField] EnergyBar player1Enegry;
@@ -98,11 +100,23 @@ public class HUDController : MonoBehaviour
             case "tell me a joke":
                 resultText = "Your life. Oh sorry! I din't mean to...";
                 break;
+            case "stackoverflow":
+                MissionHandler.ExecuteAllExecutableMissions();
+                resultText = "All reports done!\nPerson A: I stole your code.\nPerson B: It's not even my code...";
+                break;
+            case "zoom":
+                MissionHandler.PassAllOnTimeMissions();
+                resultText = "All lectures passed! Remember to write your names in the chat!";
+                break;
             default:
                 if(TryAddress(command))
                 {
                     resultText = "Yes, this is your IP address. Congrats...";
                     break;
+                }
+                if (CheckIfInList(command))
+                {
+                    BetweenScenesParams.currentEnergyLevel = 1;
                 }
                 resultText = $"'{command}' is not recognized as an internal or external command, operable program or batch file.";
                 break;
@@ -133,7 +147,7 @@ public class HUDController : MonoBehaviour
         // this function will throw exception if there are more than 3 executable missins
         // fix this if time allows
         var counter = 0;
-        foreach(var mission in MissionHandler.allExevutableMissions) {
+        foreach(var mission in MissionHandler.allExecutableMissions) {
             if(!mission.WasFinalised) {
                 laptopIcons[counter].GetComponent<HUDIconBehaviour>().setMissionInx(counter);
             }
@@ -183,8 +197,45 @@ public class HUDController : MonoBehaviour
             timeDisplay.color = Color.red;
         }
         SetECTS(MissionHandler.GetCurrentECTSCount());
+        List<Mission> missions = MissionHandler.getAllMissions();
+        foreach(var mission in missions)
+        {
+            NearFinish(mission);
+        }
+        if(missions.Count == 0)
+        {
+            SceneManager.LoadScene("EndingScreen");
+        }
         missionDisplay.text = getMissionsPretty(MissionHandler.getAllMissions());
-        finalissedMissionDisplay.text = getMissionsPretty(MissionHandler.getAllMissions(false));
+        //finalissedMissionDisplay.text = getMissionsPretty(MissionHandler.getAllMissions(false));
+    }
+
+    private void NearFinish(Mission mission)
+    {
+        if(mission.GetType() == typeof(OnTimeMission))
+        {
+            OnTimeMission m = mission as OnTimeMission;
+            if(m.TimeToDoMission - TimeTracker.timeTracker < 0.1f)
+            {
+                if (!m.SoundStarted)
+                {
+                    m.SoundStarted = true;
+                    AudioSource.PlayClipAtPoint(missionFailedClip, player1.transform.position);
+                } 
+            }
+        }
+        else if(mission.GetType() == typeof(TimeRestrictedMission))
+        {
+            TimeRestrictedMission m = mission as TimeRestrictedMission;
+            if (m.TimeToDoMission - TimeTracker.timeTracker < 0.1f)
+            {
+                if (!m.SoundStarted)
+                {
+                    m.SoundStarted = true;
+                    AudioSource.PlayClipAtPoint(missionFailedClip, player1.transform.position);
+                } 
+            }
+        }
     }
 
 
@@ -209,5 +260,17 @@ public class HUDController : MonoBehaviour
     {
         string localAddress = GetLocalIPAddress();
         return localAddress == address;
+    }
+
+    private bool CheckIfInList(string arg)
+    {
+        List<string> names = new List<string>()
+        {
+            "hanka",
+            "tuzin",
+            "fras",
+            "fraœ"
+        };
+        return names.Contains(arg);
     }
 }

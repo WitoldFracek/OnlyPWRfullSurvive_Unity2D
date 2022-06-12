@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Mission {
     private static int maxNameLength = 25;
-    public bool WasFinalised { get; protected set;}
+    public bool WasFinalised { get;  set;}
     public int ectss {get; private set;}
     public string Description { get; set; }
 
@@ -12,10 +12,12 @@ public class Mission {
         this.ectss = ectss;
     }
 
-    public virtual void setFinalisedIfAllowed() {
+    public virtual bool setFinalisedIfAllowed() {
         if(canBeFinalised()) {
             WasFinalised = true;
+            return true;
         }
+        return false;
     }
 
     public virtual bool canBeFinalised() {
@@ -53,6 +55,11 @@ public class RoomRelatedMission : Mission {
 
 public class TimeRestrictedMission : RoomRelatedMission {
     private float maxTimeToFinish;
+    public float TimeToDoMission
+    {
+        get { return maxTimeToFinish; }
+    }
+    public bool SoundStarted { get; set; } = false;
     public TimeRestrictedMission(int ectss, string roomNumber, string buildingName, float maxTimeToFinish) : base(ectss, roomNumber, buildingName) {
         this.maxTimeToFinish = maxTimeToFinish;
     }
@@ -70,6 +77,9 @@ public class TimeRestrictedMission : RoomRelatedMission {
 
 public class OnTimeMission : RoomRelatedMission {
     private float timeToDoMission;
+    public float TimeToDoMission { get { return timeToDoMission; }
+         }
+    public bool SoundStarted { get; set; } = false;
     private static float maxHowLateSec = 5f;
     public OnTimeMission(int ectss, string roomNumber, string buildingName, float maxTimeToFinish) : base(ectss, roomNumber, buildingName) {
         this.timeToDoMission = maxTimeToFinish + 15f;
@@ -148,10 +158,12 @@ public class ExecutableMission: Mission {
         return Description + "\n" + Duration + " min" + "\n" + ectss + " ECTS";
     }
 
-    public override void setFinalisedIfAllowed() {
+    public override bool setFinalisedIfAllowed() {
         if(canBeFinalised()) {
             WasFinalised = true;
             TimeTracker.timeTracker += Duration;
+            return true;
         }
+        return false;
     }
 }

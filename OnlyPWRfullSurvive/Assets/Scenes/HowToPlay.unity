@@ -1655,12 +1655,8 @@ MonoBehaviour:
     Interact:   E key
 
 
-    Boss
-    fight:
-
-    Jump:   space
-
-    Throw:   E key'
+    Hold
+    Tab key to open a map'
 --- !u!222 &540437317
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1704,7 +1700,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 206.09433, y: -92.67333}
+  m_AnchoredPosition: {x: 206.09, y: -49.615}
   m_SizeDelta: {x: 158.1092, y: 158.1093}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &544930794
@@ -3427,7 +3423,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200.6107, y: -92.089}
+  m_AnchoredPosition: {x: -201.6, y: -50.2}
   m_SizeDelta: {x: 159.2773, y: 159.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1447738413
@@ -4341,19 +4337,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Player 2: (inavailable in mobile version)
+  m_Text: 'Press F2 to toggle
 
-    Movement:   arrow keys
+    Player 2: (inavailable in mobile version)
 
-    Interact:  
-    right Ctrl
+    Movement:  
+    arrow keys
 
-
-    Boss fight:
-
-    Jump:   up arrow
-
-    Throw:   right Ctrl'
+    Interact:   right Ctrl'
 --- !u!222 &1908913490
 CanvasRenderer:
   m_ObjectHideFlags: 0

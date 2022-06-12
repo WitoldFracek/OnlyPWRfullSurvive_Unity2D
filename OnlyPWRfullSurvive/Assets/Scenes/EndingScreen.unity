@@ -4137,6 +4137,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: {fileID: 1418019464}
   buttonText: {fileID: 1531018815}
+  image: {fileID: 1164503339}
+  successSprite: {fileID: 21300000, guid: ca0dcb7323b660f4d8710ac2b9962e0a, type: 3}
+  defeatSprite: {fileID: 21300000, guid: d640fb1639a39da44ab75eb6ea2c25c4, type: 3}
 --- !u!1 &2077776591
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ public class HUDIconBehaviour : MonoBehaviour
 
     public void setMissionInx(int missionInx) {
         this.executableMissionInx = missionInx;
-        mission = MissionHandler.allExevutableMissions[missionInx];
+        mission = MissionHandler.allExecutableMissions[missionInx];
         GetComponentInChildren<Text>().text = mission.FileDescription();
         makeVisible();
     }

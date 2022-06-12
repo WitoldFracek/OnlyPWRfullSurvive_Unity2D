@@ -2933,7 +2933,7 @@ MonoBehaviour:
   timeDisplay: {fileID: 7475387314786631583}
   ectsDisplay: {fileID: 7475387316281775495}
   missionDisplay: {fileID: 7475387315937210136}
-  finalissedMissionDisplay: {fileID: 7475387315424558690}
+  missionFailedClip: {fileID: 8300000, guid: 6a1d356e78fb89140aa9323e00a167fd, type: 3}
   player1Enegry: {fileID: 7475387314862890044}
   player2Energy: {fileID: 7475387316496965347}
   laptop: {fileID: 7475387316194975872}
@@ -3283,7 +3283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7475387315424558688
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5123,8 +5123,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 3.887497, y: 110.54811}
-  m_SizeDelta: {x: -7.7749, y: 93.725}
+  m_AnchoredPosition: {x: 3.8894958, y: 55.629}
+  m_SizeDelta: {x: -7.7749, y: 111.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7475387315937210143
 CanvasRenderer:
@@ -6265,8 +6265,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -169.4711, y: -106.53592}
-  m_SizeDelta: {x: 315.3798, y: 191.281}
+  m_AnchoredPosition: {x: -169.4711, y: -81.24881}
+  m_SizeDelta: {x: 315.3798, y: 140.7068}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7475387316570812730
 CanvasRenderer:
@@ -6994,6 +6994,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -44.438503
       objectReference: {fileID: 0}
+    - target: {fileID: 4425029816344960270, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 140.7068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425029816344960270, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -81.24881
+      objectReference: {fileID: 0}
+    - target: {fileID: 4662746289949834487, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 111.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4662746289949834487, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.8894958
+      objectReference: {fileID: 0}
+    - target: {fileID: 4662746289949834487, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 55.629
+      objectReference: {fileID: 0}
     - target: {fileID: 4678361055749474386, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}
       propertyPath: m_SizeDelta.y
       value: 25.3285
@@ -7113,6 +7133,10 @@ PrefabInstance:
     - target: {fileID: 8744398506580282797, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8764919661757286604, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9034777627800363289, guid: 1f57c207bebe8594dbed24cf33009151, type: 3}
       propertyPath: m_Color.b

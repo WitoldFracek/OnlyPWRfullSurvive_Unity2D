@@ -97,7 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorNumber: 
+  buildingName: 
   text: {fileID: 6092859228031236947}
+  successClip: {fileID: 8300000, guid: 5135fea8782890c44bfe417cb0cbcf1b, type: 3}
 --- !u!1 &3209707644207385871
 GameObject:
   m_ObjectHideFlags: 0

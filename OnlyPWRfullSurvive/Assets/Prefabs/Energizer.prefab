@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6188985682566690460
 Transform:
   m_ObjectHideFlags: 0
@@ -218,6 +218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe47152a7cbbd3448a0fabec35e6d09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textHint: {fileID: 6188985682566690457}
   maxEnergyPercent: 0.3
+  textHint: {fileID: 6188985682566690457}
   energyBoosterSound: {fileID: 8300000, guid: 610cdf48cdd84b54090ed0460378ee54, type: 3}

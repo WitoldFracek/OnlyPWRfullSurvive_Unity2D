@@ -11,13 +11,18 @@ public class DoorRangeBehavior : PlayerOver
     [SerializeField]
     private TextMesh text;
 
+    [SerializeField] AudioClip successClip;
+
     private void Start() {
         text.text = doorNumber;
     }
 
     override protected void whenInRange() {
         //Debug.Log($"{doorNumber} {buildingName}");
-        MissionHandler.executeMissionForRoomNumber(doorNumber, buildingName);
+        if (MissionHandler.executeMissionForRoomNumber(doorNumber, buildingName))
+        {
+            AudioSource.PlayClipAtPoint(successClip, transform.position);
+        }
         // Debug.Log(timeToEnter + " " + TimeTracker.timeTracker + " " + (timeToEnter + maxHowLateSec));
         // if(timeToEnter <= TimeTracker.timeTracker && TimeTracker.timeTracker <= timeToEnter + maxHowLateSec) {
         //     gameObject.GetComponent<SpriteRenderer>().color = Color.green;

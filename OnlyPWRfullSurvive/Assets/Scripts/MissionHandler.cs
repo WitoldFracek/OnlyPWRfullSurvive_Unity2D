@@ -6,9 +6,9 @@ public static class MissionHandler {
     public static List<OnTimeMission> allOnTimeMissions;
     public static List<CollectMission> allCollectMissions;
     public static List<TimeRestrictedMission> allTimeRestrictedMissions;
-    public static List<ExecutableMission> allExevutableMissions;
+    public static List<ExecutableMission> allExecutableMissions;
 
-    public static List< Mission> getAllMissions(bool relevant=true) {
+    public static List<Mission> getAllMissions(bool relevant=true) {
         var missionList = new List<Mission>();
         foreach (var mission in GetAllMissions()) {
             if (mission.isStillRelevant() == relevant) {
@@ -38,19 +38,19 @@ public static class MissionHandler {
     public static void setLevel1Missions() {
         allOnTimeMissions = new List<OnTimeMission>();
         allCollectMissions = new List<CollectMission>();
-        allExevutableMissions = new List<ExecutableMission>();
+        allExecutableMissions = new List<ExecutableMission>();
         allTimeRestrictedMissions = new List<TimeRestrictedMission>();
 
         allOnTimeMissions.Add(new OnTimeMission(9, "101", "A1", 60f * 2f) { Description = "Lecture Data warehouse"});
         allCollectMissions.Add(new CollectMission(5, 5, "CD") { Description = "Collect CDs"});
-        allExevutableMissions.Add(new ExecutableMission(9, 60f * 2f) { Description = "Report Data warehouse"});
+        allExecutableMissions.Add(new ExecutableMission(9, 60f * 2f) { Description = "Report Data warehouse"});
         allTimeRestrictedMissions.Add(new TimeRestrictedMission(7, "102", "Dean", 60f * 4f) { Description = "Dean's office paperwork"});
     }
 
     public static void setLevel2Missions() {
         allOnTimeMissions = new List<OnTimeMission>();
         allCollectMissions = new List<CollectMission>();
-        allExevutableMissions = new List<ExecutableMission>();
+        allExecutableMissions = new List<ExecutableMission>();
         allTimeRestrictedMissions = new List<TimeRestrictedMission>();
 
         allOnTimeMissions.Add(new OnTimeMission(5, "104", "A1", 60f*1f) { Description = "Lecture Microsoft admin"});
@@ -58,8 +58,8 @@ public static class MissionHandler {
 
         allCollectMissions.Add(new CollectMission(5, 5, "PENDRIVE") { Description = "Collect pendrives"});
 
-        allExevutableMissions.Add(new ExecutableMission(5, 30f) { Description = "Report Cybersecurity"});
-        allExevutableMissions.Add(new ExecutableMission(5, 60f) { Description = "App Android"});
+        allExecutableMissions.Add(new ExecutableMission(5, 30f) { Description = "Report Cybersecurity"});
+        allExecutableMissions.Add(new ExecutableMission(5, 60f) { Description = "App Android"});
 
         allTimeRestrictedMissions.Add(new TimeRestrictedMission(5, "101", "Dean", 60f * 4f) { Description = "Sticker student ID"});
     }
@@ -67,7 +67,7 @@ public static class MissionHandler {
     public static void setLevel3Missions() {
         allOnTimeMissions = new List<OnTimeMission>();
         allCollectMissions = new List<CollectMission>();
-        allExevutableMissions = new List<ExecutableMission>();
+        allExecutableMissions = new List<ExecutableMission>();
         allTimeRestrictedMissions = new List<TimeRestrictedMission>();
 
         allOnTimeMissions.Add(new OnTimeMission(2, "105", "A1", 60f) { Description = "Lecture Microsoft admin"});
@@ -77,22 +77,23 @@ public static class MissionHandler {
 
         allCollectMissions.Add(new CollectMission(7, 7, "CIRCUT_BOARD") { Description = "Collect Circut boards"});
 
-        allExevutableMissions.Add(new ExecutableMission(3, 60f) { Description = "Code checkers MIN-MAX"});
-        allExevutableMissions.Add(new ExecutableMission(2, 30f) { Description = "Report "});
-        allExevutableMissions.Add(new ExecutableMission(4, 90f) { Description = "Website .NET"});
+        allExecutableMissions.Add(new ExecutableMission(3, 60f) { Description = "Code checkers MIN-MAX"});
+        allExecutableMissions.Add(new ExecutableMission(2, 30f) { Description = "Report "});
+        allExecutableMissions.Add(new ExecutableMission(4, 90f) { Description = "Website .NET"});
 
         allTimeRestrictedMissions.Add(new TimeRestrictedMission(6, "103", "Dean", 60f * 2.5f) { Description = "Internship paperwork"});
     }
 
-    public static void executeMissionForRoomNumber(string roomNumber, string buildingName) {
+    public static bool executeMissionForRoomNumber(string roomNumber, string buildingName) {
         var allRoomRelatedMissions = new List<RoomRelatedMission>();
         allRoomRelatedMissions.AddRange(allOnTimeMissions);
         allRoomRelatedMissions.AddRange(allTimeRestrictedMissions);
         foreach(var mission in allRoomRelatedMissions) {
             if(mission.roomNumber == roomNumber && mission.buildingName == buildingName) {
-                mission.setFinalisedIfAllowed();
+                return mission.setFinalisedIfAllowed();
             }
         }
+        return false;
     }
     // public static void CollectOneItem(string itemTag) {
     //     var mission = allCollectMissions.FirstOrDefault(m => m.CollectableTag == itemTag);
@@ -102,7 +103,7 @@ public static class MissionHandler {
         
     // }
     public static void ExecuteExecutableMission(int missionInx) {
-        allExevutableMissions[missionInx].setFinalisedIfAllowed();
+        allExecutableMissions[missionInx].setFinalisedIfAllowed();
     }
 
     public static List<Mission> GetAllMissions()
@@ -114,8 +115,8 @@ public static class MissionHandler {
             allMissions.AddRange(allTimeRestrictedMissions);
         if (allCollectMissions != null)
             allMissions.AddRange(allCollectMissions);
-        if (allExevutableMissions != null)
-            allMissions.AddRange(allExevutableMissions);
+        if (allExecutableMissions != null)
+            allMissions.AddRange(allExecutableMissions);
         return allMissions;
     }
 
@@ -148,6 +149,22 @@ public static class MissionHandler {
             {
                 mission.AddOneItem(collectable.id);
             }
+        }
+    }
+
+    public static void ExecuteAllExecutableMissions()
+    {
+        foreach(var mission in allExecutableMissions)
+        {
+            mission.WasFinalised = true;
+        }
+    }
+
+    public static void PassAllOnTimeMissions()
+    {
+        foreach(var mission in allOnTimeMissions)
+        {
+            mission.WasFinalised = true;
         }
     }
 }
