@@ -11,6 +11,9 @@ public class EndScreenHandler : MonoBehaviour
     [SerializeField] Image image;
     [SerializeField] Sprite successSprite;
     [SerializeField] Sprite defeatSprite;
+
+    [SerializeField] List<Sprite> hints;
+    [SerializeField] Image tipImage;
     void Start()
     {
         if(MissionHandler.GetCurrentECTSCount() >= Constants.minToPassEcts) {
@@ -21,6 +24,8 @@ public class EndScreenHandler : MonoBehaviour
             title.text = $"You are not PWRfull enough!\nYou need at least {Constants.minToPassEcts}/{Constants.maxEcts} ECTS to pass.\nYou have {MissionHandler.GetCurrentECTSCount()} ECTS";
             image.sprite = defeatSprite;
         }
+        var rnd = new System.Random();
+        tipImage.sprite = hints[rnd.Next(0, hints.Count)];
     }
 
     public void backToMenu() {
