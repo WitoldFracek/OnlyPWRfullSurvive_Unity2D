@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using System;
 
 public class HUDController : MonoBehaviour
 {
@@ -95,13 +96,10 @@ public class HUDController : MonoBehaviour
         {
             case "":
                 break;
-            case "debug":
-                Debug.Log("debug");
-                break;
-            case "ipconfig":
-                string address = GetLocalIPAddress();
-                resultText = $"Network address:\n{address}";
-                break;
+            //case "ipconfig":
+            //    string address = GetLocalIPAddress();
+            //    resultText = $"Network address:\n{address}";
+            //    break;
             case "tell me a joke":
                 resultText = "Your life. Oh sorry! I din't mean to...";
                 break;
@@ -114,14 +112,14 @@ public class HUDController : MonoBehaviour
                 resultText = "All lectures passed! Remember to write your names in the chat!";
                 break;
             default:
-                if(TryAddress(command))
-                {
-                    resultText = "Yes, this is your IP address. Congrats...";
-                    break;
-                }
+                //if(TryAddress(command))
+                //{
+                //    resultText = "Yes, this is your IP address. Congrats...";
+                //    break;
+                //}
                 if (CheckIfInList(command))
                 {
-                    BetweenScenesParams.currentEnergyLevel = 1;
+                    BetweenScenesParams.currentEnergyLevel = 5;
                 }
                 resultText = $"'{command}' is not recognized as an internal or external command, operable program or batch file.";
                 break;
@@ -267,24 +265,32 @@ public class HUDController : MonoBehaviour
 
 
 
-    private string GetLocalIPAddress()
-    {
-        var host = Dns.GetHostEntry(Dns.GetHostName());
-        foreach(var ip in host.AddressList)
-        {
-            if(ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
-            {
-                return ip.ToString();
-            }
-        }
-        return "No connection";
-    }
+    //private string GetLocalIPAddress()
+    //{
+    //    try
+    //    {
+    //        var host = Dns.GetHostEntry(Dns.GetHostName());
+    //        foreach (var ip in host.AddressList)
+    //        {
+    //            if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+    //            {
+    //                return ip.ToString();
+    //            }
+    //        }
+    //        return "No connection";
+    //    }
+    //    catch(Exception e)
+    //    {
+    //        return "No connection";
+    //    }
+        
+    //}
 
-    private bool TryAddress(string address)
-    {
-        string localAddress = GetLocalIPAddress();
-        return localAddress == address;
-    }
+    //private bool TryAddress(string address)
+    //{
+    //    string localAddress = GetLocalIPAddress();
+    //    return localAddress == address;
+    //}
 
     private bool CheckIfInList(string arg)
     {

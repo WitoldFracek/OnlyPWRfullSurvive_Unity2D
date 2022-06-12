@@ -1656,7 +1656,7 @@ MonoBehaviour:
 
 
     Hold
-    Tab key to open a map'
+    TAB key to open a map'
 --- !u!222 &540437317
 CanvasRenderer:
   m_ObjectHideFlags: 0
