@@ -1569,7 +1569,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Time restricted mission - complete given objective before the specified
-    time
+    time.
 --- !u!222 &502471808
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2702,25 +2702,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'During the game you can interact with vrious thiings like collectable
-    items or NPCs. Just come close to one of those interactables and press interaction
+  m_Text: 'During the game you can interact with vrious things like collectable items
+    or NPCs. Just come close to one of those interactables and press interaction
     button.
 
 
-    Stairs - allow you to enter buildings and different floors.
+    Stairs - allow you to enter buildings.
 
 
-    Energy
-    drinks and coffees - regenerate your energy level. If your energy bar drops to
-    0 the level ends.
+    Energy drinks and
+    coffees - regenerate your energy level. If your energy bar drops to 0 the level
+    ends.
 
 
-    CDs, pendrives and circuit boards - items you can collect
-    in order to complete a mission.
+    CDs, pendrives and circuit boards - items you can collect in order
+    to complete a mission.
 
 
-    NPCs - you can interact with them to open
-    a dialog box.'
+    NPCs - you can interact with them to open a dialog
+    box.'
 --- !u!222 &951726335
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4258,7 +4258,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Collect items - collect specified by the mission number of items
+  m_Text: Collect items - collect specified by the mission number of items.
 --- !u!222 &1902209941
 CanvasRenderer:
   m_ObjectHideFlags: 0
