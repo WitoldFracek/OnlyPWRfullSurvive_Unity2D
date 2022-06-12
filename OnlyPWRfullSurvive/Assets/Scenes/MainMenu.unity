@@ -5225,7 +5225,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2056155412}
         m_TargetAssemblyTypeName: MenuButtonBehaviour, Assembly-CSharp
-        m_MethodName: startLevel2
+        m_MethodName: StartCutscene2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
