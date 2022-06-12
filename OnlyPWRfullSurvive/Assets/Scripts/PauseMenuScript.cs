@@ -18,7 +18,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         actionMap["Pause"].performed += ctx => TogglePauseMenu();
         slider.minValue = 0;
-        slider.maxValue = 100;
+        slider.maxValue = 1;
         toggle.isOn = MusicController.musicController.IsMusicOn;
         slider.value = MusicController.musicController.Volume;
     }
