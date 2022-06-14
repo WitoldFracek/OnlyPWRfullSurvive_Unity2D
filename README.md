@@ -1,4 +1,4 @@
-AVALIABLE PLAY IN BROWSER VERSION: https://ksproska.itch.io/onlypwrfullsurvive
+# AVALIABLE [PLAY IN BROWSER VERSION](https://ksproska.itch.io/onlypwrfullsurvive)
 
 ## Menu
  
