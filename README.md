@@ -1,4 +1,4 @@
-# Check out [PLAY IN BROWSER](https://ksproska.itch.io/onlypwrfullsurvive) version!
+# Check out [PLAY IN BROWSER](https://ksproska.itch.io/onlypwrfullsurvive) `#9A342D` version!
 
 ## Welcome to OnlyPWRfullSurvive!
 Complete tasks for each level, collect unique items and try not to die of exhaustion! Hope you'll have fun...  And remember, unlike the Wrocław University of Technology, this game is just a simulation!
