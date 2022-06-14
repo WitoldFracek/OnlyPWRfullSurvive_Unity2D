@@ -1,4 +1,6 @@
-# GryProjekt
+AVALIABLE PLAY IN BROWSER VERSION: https://ksproska.itch.io/onlypwrfullsurvive
+
+## Menu
  
 ![image](https://user-images.githubusercontent.com/61067969/173574871-ac1281f6-da5c-4c27-87a7-fd5bab3bd0e7.png)
 
