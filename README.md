@@ -5,7 +5,8 @@ Complete tasks for each level, collect unique items and try not to die of exhaus
 
 ## Created by:
 
-[![image](https://user-images.githubusercontent.com/61067969/173577741-9c9aca14-e13e-4335-8ffc-b25f164ff7ca.png)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[![us_real_and_pixelated](https://user-images.githubusercontent.com/61067969/173668996-a1c3b2e5-9125-42df-94e2-963a454ee508.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+
 
 [Kamila Sproska](https://github.com/ksproska)
 
