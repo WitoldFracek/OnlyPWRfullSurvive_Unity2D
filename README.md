@@ -1,8 +1,18 @@
 # Check out [PLAY IN BROWSER](https://ksproska.itch.io/onlypwrfullsurvive) version!
 
+## Welcome to OnlyPWRfullSurvive!
+Complete tasks for each level, collect unique items and try not to die of exhaustion! Hope you'll have fun...  And remember, unlike the Wrocław University of Technology, this game is just a simulation!
+
+## Created by:
+
 [![image](https://user-images.githubusercontent.com/61067969/173577741-9c9aca14-e13e-4335-8ffc-b25f164ff7ca.png)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
-## Menu
+[Kamila Sproska](https://github.com/ksproska)
+
+[Witold Frącek](https://github.com/WitoldFracek)
+
+## Game screenshots
+### Menu
  
 ![image](https://user-images.githubusercontent.com/61067969/173574871-ac1281f6-da5c-4c27-87a7-fd5bab3bd0e7.png)
 
@@ -14,24 +24,24 @@
 
 ![image](https://user-images.githubusercontent.com/61067969/173575066-d4dc7d57-8c6e-4775-8bdb-ef4f107a547b.png)
 
-## Year 1 - cutscene
+### Year 1 - cutscene
 ![image](https://user-images.githubusercontent.com/61067969/173575198-277d8910-4456-4c4d-9c7c-88777ade9416.png)
 
 ![image](https://user-images.githubusercontent.com/61067969/173575223-af12df6e-0f00-4e0a-bcdd-33285b0e5c77.png)
 
 ![image](https://user-images.githubusercontent.com/61067969/173575265-bfb8ff04-7474-497f-9323-cdbbea62cd7c.png)
 
-## Year 2 - cutscene
+### Year 2 - cutscene
 ![image](https://user-images.githubusercontent.com/61067969/173576030-a84ffaf7-eed8-4d16-81bb-032876042cd8.png)
 
 ![image](https://user-images.githubusercontent.com/61067969/173576056-2409d68b-b8af-494e-a2b4-669c50fe1f36.png)
 
-## Year 3 - cutscene
+### Year 3 - cutscene
 ![image](https://user-images.githubusercontent.com/61067969/173576113-f9920e87-7e97-46b2-b37d-c0bd19c81b60.png)
 
 ![image](https://user-images.githubusercontent.com/61067969/173576179-86546457-a346-4ab7-a23d-a7ab286e1306.png)
 
-## Gameplay
+### Gameplay
 ![image](https://user-images.githubusercontent.com/61067969/173575371-992ffd61-2182-4d80-b165-cf4c1461b2da.png)
 
 ![image](https://user-images.githubusercontent.com/61067969/173575469-63f7411f-0ebb-46f4-9e16-4b344dd26701.png)
