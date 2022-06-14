@@ -23,3 +23,12 @@
 
 ## Gameplay
 ![image](https://user-images.githubusercontent.com/61067969/173575371-992ffd61-2182-4d80-b165-cf4c1461b2da.png)
+
+![image](https://user-images.githubusercontent.com/61067969/173575469-63f7411f-0ebb-46f4-9e16-4b344dd26701.png)
+
+![image](https://user-images.githubusercontent.com/61067969/173575531-a2a14d14-bc2a-44c8-bc8f-3fb80d2ee6a3.png)
+
+![image](https://user-images.githubusercontent.com/61067969/173575640-19bb1009-636c-4ed2-9dd0-5eec82476010.png)
+
+![image](https://user-images.githubusercontent.com/61067969/173575702-e078f030-9527-4591-9f95-6564c2213d19.png)
+
