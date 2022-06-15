@@ -3,12 +3,9 @@
 ## Welcome to *OnlyPWRfullSurvive*!
 Complete tasks for each level, collect unique items and try not to die of exhaustion! Hope you'll have fun...  And remember, unlike the Wrocław University of Technology, this game is just a simulation!
 
-## Created by:
+## Created by [Witold Frącek](https://github.com/WitoldFracek) & [Kamila Sproska](https://github.com/ksproska)
 
 [![us_real_and_pixelated](https://user-images.githubusercontent.com/61067969/173668996-a1c3b2e5-9125-42df-94e2-963a454ee508.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-
-
-[Witold Frącek](https://github.com/WitoldFracek) & [Kamila Sproska](https://github.com/ksproska)
 
 ## Game screenshots
 ### Menu
